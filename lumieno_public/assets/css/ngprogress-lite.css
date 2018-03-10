@@ -1,0 +1,31 @@
+.ngProgressLite {
+	pointer-events: none;
+}
+
+.ngProgressLiteBar { 
+	position: fixed; 
+	top: 0;
+	left: 0;
+	height: 3px; 
+	z-index: 99999;
+	background-color: #0405FF;
+	color: #0405FF;
+	box-shadow: 0 0 10px 0;  
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.ngProgressLite .ngProgressLiteBarShadow {
+	display: block;
+	position: absolute;
+	right: 0px;
+	width: 100px;
+	height: 100%;
+	box-shadow: 0 0 10px #369BD5, 0 0 5px #369BD5;
+	opacity: 1;
+	-webkit-transform: rotate(3deg) translate(0px, -4px);
+	-ms-transform: rotate(3deg) translate(0px, -4px);
+	transform: rotate(3deg) translate(0px, -4px);
+}

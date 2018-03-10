@@ -1,0 +1,46 @@
+ 
+	   <div class="xs">
+  	 <h3>views</h3>
+ 
+	<div class="bs-example4" data-example-id="simple-responsive-table">
+ 
+
+    <div class="table-responsive">
+  <table class="table sortablea">
+    <thead>
+      <tr> 
+     
+        <th  ng-click="viewd.idOrder = sortTable('id', viewd.idOrder)" > #<i class="fa " ng-class="{ 'fa-sort-desc' : viewd.ipOrder , 'fa-sort-asc' : !viewd.idOrder  }" ng-show="viewss.id" aria-hidden="true"></i>
+</th>
+        <th  ng-click="viewd.ipOrder = sortTable('ip', viewd.ipOrder)" > ip<i class="fa " ng-class="{ 'fa-sort-desc' : viewd.ipOrder , 'fa-sort-asc' : !viewd.ipOrder  }" ng-show="viewss.ip" aria-hidden="true"></i>
+</th>
+        <th ng-click="viewd.tfOrder = sortTable('tf', viewd.viewOrder)" > Time From<i class="fa " ng-class="{ 'fa-sort-desc' : viewd.tfOrder , 'fa-sort-asc' : !viewd.tfOrder  }" ng-show="viewss.tf" aria-hidden="true"></i>
+</th>
+        <th ng-click="viewd.ttOrder = sortTable('tt', viewd.ttOrder)" > Time To<i class="fa " ng-class="{ 'fa-sort-desc' : viewd.ttOrder , 'fa-sort-asc' : !viewd.ttOrder  }" ng-show="viewss.tt" aria-hidden="true"></i>
+</th>
+        <th ng-click="viewd.tOrder = sortTable('t', viewd.tOrder)" > Time<i class="fa " ng-class="{ 'fa-sort-desc' : viewd.tOrder , 'fa-sort-asc' : !viewd.tOrder  }" ng-show="viewss.t" aria-hidden="true"></i>
+</th>
+        <th ng-click="viewd.browserOrder = sortTable('browser', viewd.browserOrder)" > Browser<i class="fa " ng-class="{ 'fa-sort-desc' : viewd.browserOrder , 'fa-sort-asc' : !viewd.browserOrder  }" ng-show="viewss.browser" aria-hidden="true"></i>
+</th>
+        <th ng-click="viewd.osOrder = sortTable('os', viewd.osOrder)" > Os<i class="fa " ng-class="{ 'fa-sort-desc' : viewd.osOrder , 'fa-sort-asc' : !viewd.osOrder  }" ng-show="viewss.os" aria-hidden="true"></i>
+</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+ 
+      <tr ng-repeat="view in views"> 
+        <td>{{ view.id }}</td>
+        <td>{{view.ip}}</td>
+        <td>{{view.tf}}</td>
+        <td>{{view.tt}}</td>
+        <td>{{view.t}}</td>
+        <td>{{view.browser}}</td>
+        <td>{{view.os}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+    </div><!-- /.table-responsive -->
+  </div>
+  </div>
+ 

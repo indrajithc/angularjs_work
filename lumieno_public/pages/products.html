@@ -1,0 +1,83 @@
+
+ <!-- portfolio-bg -->
+	<div class="portfolio-bg">
+		<div class="container">
+			<h2 class="color-headng ">products</h2>
+		</div>
+	</div>
+<!-- //portfolio-bg -->
+
+<!-- dresses -->
+	<div class="dresses"> 
+		<div class="container">
+			<div class="w3ls_dresses_grids">
+			 
+				<div class="col-md-12 w3ls_dresses_grid_right">
+	 
+
+					<div class="w3ls_dresses_grid_right_grid2">
+						 
+						<div class="w3ls_dresses_grid_right_grid2_right">
+							<select name="select_item" class="select_item" ng-model="productx.sort"  ng-change="updateSort(productx.sort)">
+								<option value="0" selected="selected">Default sorting</option> 
+								<option value="1">Sort by average rating</option>
+								<option value="2">Sort by newness</option>
+								<option value="3">Sort by price: low to high</option>
+								<option value="4">Sort by price: high to low</option>
+							</select>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+	
+	</div>		 
+<div class="col-md-12 w3ls_dresses_grid_right">
+	 
+
+			
+
+
+<!-- ng-if="!(($index + 1) % 4)"  -->
+ 
+					
+<div  ng-repeat="product in nproducts"  class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_dresses make-pkc"   >
+	<div class="agile_ecommerce_tab_left dresses_grid">
+		<div class="hs-wrapper hs-wrapper2">
+			<img  style="width: 100%;"  ng-repeat="image in product.images" ng-src="images/products/{{image.name}}" alt=" " class="img-responsive"  onerror="javascript:this.src='assets/images/default.png'"  />	
+		 
+
+		 <div class="w3_hs_bottom w3_hs_bottom_sub1"  ng-hide="{{product.soon}}">
+		 	<ul>
+		 		<li class=" animated infinite swing comming-soon-a">
+		 				 			<span>
+		 				 			<h5>COMING SOON</h5>
+		 				 			</span>
+		 		</li>
+		 				 	
+		 	</ul>
+		 </div>
+ 
+
+		</div>
+		<h5><a  ng-click="go( product.name )" ng-href="#" ng-attr-title="{{product.name}}"> {{product.name | limitTo:75:' ...' }}<span ng-if="product.name.length > 75">...</span></a></h5>
+		
+		<div class="simpleCart_shelfItem">
+			<p><span ng-show="{{product.oprice}}"><i class="fa fa-inr" aria-hidden="true"></i>{{product.oprice}}</span> <i class="item_price"><i class="fa fa-inr" aria-hidden="true"></i>{{product.nprice}}</i></p>
+			<p><a class="item_add"   ng-click="buy( product.name )"  ng-show="{{product.soon}}">buy now</a></p>
+			<p style="height: 35px;"   ng-hide="{{product.soon}}"></p>
+		</div>
+		<div class="dresses_grid_pos" ng-show="{{product.neww}}">
+			<h6>New</h6>
+		</div>
+	</div>
+
+</div>
+ 
+
+
+ 
+						 
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>

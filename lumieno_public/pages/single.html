@@ -1,0 +1,90 @@
+ 
+
+ <!-- portfolio-bg -->
+	<div class="portfolio-bg">
+		<div class="containera">
+			<h2 class="color-headng ">{{product}}</h2>
+		</div>
+	</div>
+<!-- //portfolio-bg -->
+
+<!-- dresses -->
+<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-4">
+						
+						<div class="preview-pic tab-content">
+
+						  <div class="tab-pane" ng-class="{ 'active' : $index == 0  }"    ng-repeat="image in images" id="pic-{{$index}}"><img  class="image_xd" ng-src="{{image.path}}"/></div> 
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs"> 
+						  <li ng-repeat="image in images"><a data-target="#pic-{{$index}}" data-toggle="tab"><img ng-src="{{image.path}}" /></a></li>
+
+						
+						</ul>
+						
+					</div>
+					<div class="details col-md-offset-1 col-md-5">
+						<h3 class="product-title">{{product}}</h3>
+						<div class="rating">
+							<div class="stars"  >
+								<span  ng-repeat="n in range(1,5)" class="fa fa-star " ng-class="{ 'checked' : n<= products.rate }"></span> 
+							</div> 
+						</div>
+						<p class="product-description">{{products.description}}</p>
+						<h5 class="price" ng-show="products.oprice" >price: <span class="cut-pri" ><i class="fa fa-inr" aria-hidden="true"></i>{{products.oprice}}</span></h5>
+						<h4 class="price">current price: <span><i class="fa fa-inr" aria-hidden="true"></i>{{products.nprice}}</span></h4> 
+						<div class="action"   ng-hide="products.soon">
+							<button ng-click="cart(products.name)" class="add-to-cart btn btn-default clickMe" type="button">add to cart</button>
+							<button  ng-click="buy( products.name )"  class="add-to-cart btn btn-success-mo" type="button">buy now</button> 
+						</div>
+						<div class="action"  ng-hide="!products.soon">
+							<ul class="non-dot">
+								<li class="  comming-soon-a">
+										 			<span class="animated infinite swing ">
+										 			<h5 >COMING SOON</h5>
+										 			</span>
+								</li>
+										 	
+							</ul>
+						</div>
+						<span style="padding: 1em;"></span>
+						<h4 class="price">specifications</h4>
+						<p class="vote" ng-repeat="specification in specifications"><strong class="col-sm-3 text-right" >{{specification.name}}</strong><span class="col-sm-8 text-left">{{specification.value}}</span></p>
+						 
+						<h5 class="colors"> 
+							 
+						</h5>
+						
+					</div>
+					<div class="col-md-3 cjekleft_r ">
+					<div>
+						<a class="btn btn-danger ma-btn" href="checkout"><h4 class="df3">  <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Cart
+</h4> <span class="product-title df4  "><i class="fa fa-inr" aria-hidden="true"></i>{{getTotal(carts)}}</span></a>
+</div>  
+
+						<div class="row rowst" ng-repeat="cart in carts">
+							<div class="col-md-4">
+								<a ng-click="go( cart.product.name )" ng-href="#" ng-attr-title="{{cart.product.name}}">
+														<img ng-src="{{cart.image}}" alt=" " class="img-responsive" onerror="javascript:this.src='assets/images/default.png'" />
+														</a>
+							</div> 
+							<div class="col-md-6">
+								<p>{{cart.product.name | limitTo:75:' ...' }}</p><span class="nx-totoal"><i class="fa fa-inr" aria-hidden="true"></i> {{ addPrice(cart.charge, cart.product.nprice, cart.count) }} </span>
+							</div>
+							<div class="col-md-2">
+								<i class="fa fa-times" aria-hidden="true" ng-click="removeThisCart( cart )" ></i>
+							</div>
+						</div>
+
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

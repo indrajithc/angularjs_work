@@ -1,0 +1,74 @@
+ 
+
+<!-- checkout -->
+	<div class="checkout margin-top-1em">
+	<div class="container">
+			<h3>buy now: <span>{{carts.length}} Products</span></h3>
+
+			<div class="checkout-right"> 
+			<table class="timetable_sub">
+					<thead>
+						<tr>
+							<th>SL No.</th>	
+							<th>Product</th>
+							<th class="col-md-2">Quality</th>
+							<th>Product Name</th>
+							<th>Service Charges</th>
+							<th>Price</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+
+
+					<tr class="rem1" ng-repeat="cart in carts">
+						<td class="invert">{{$index+1}}</td>
+						<td class="invert-image">
+						<a ng-click="go( cart.product.name )" ng-href="#" ng-attr-title="{{cart.product.name}}">
+						<img ng-src="{{cart.image}}" alt=" " class="img-responsive" onerror="javascript:this.src='assets/images/default.png'" />
+						</a></td>
+						<td class="invert">
+							 <div class="quantity"> 
+								<div class="quantity-select">                           
+									<div ng-click="addCount( cart , -1)" class="entry value-minus">&nbsp;</div>
+									<div class="entry value someMod"><span>{{cart.count}}</span></div>
+									<div ng-click="addCount( cart , 1)" class="entry value-plus active">&nbsp;</div>
+								</div>
+							</div>
+						</td>
+						<td class="invert">{{cart.product.name }}</td>
+						<td class="invert"><i class="fa fa-inr" aria-hidden="true"></i>{{cart.charge}}</td>
+						<td class="invert"><i class="fa fa-inr" aria-hidden="true"></i>{{cart.product.nprice}}</td>
+						<td class="invert">
+							<div class="rem">
+								<div ng-click="removeThisCart( cart )" class="close1"> </div>
+							</div> 
+						</td>
+					</tr>
+
+  
+				</table>
+			</div>
+			<div class="checkout-left">	
+				<div class="checkout-left-basket">
+					<h4>Continue to basket</h4>
+					<ul>
+						<li ng-repeat="cart in carts">{{cart.product.name }}<i>-</i> 
+							<span><i class="fa fa-inr" aria-hidden="true"></i> {{ addPrice(cart.charge, cart.product.nprice, cart.count) }} </span>
+						</li>
+
+
+ 
+						<li>Total <i>-</i> <span>
+						<i class="fa fa-inr" aria-hidden="true"></i>{{ getTotal(carts) }} </span></li>
+					</ul>
+				</div>
+				<div class="checkout-right-basket">
+					<a ng-click="gotoPaymnt()" class="inverseHert">Goto Payment<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+				</div>
+				<div class="checkout-right-basket">
+					<a href="products"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>

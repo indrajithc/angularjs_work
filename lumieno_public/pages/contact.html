@@ -1,0 +1,70 @@
+<!-- portfolio-bg -->
+	<div class="portfolio-bg">
+		<div class="container">
+			<h2 class="color-headng ">Contact Us</h2>
+		</div>
+	</div>
+<!-- //portfolio-bg -->
+<!-- mail -->
+	<div class="mail">
+		<div class="container">
+			<h3>How To Find Us</h3>
+			<p class="qui">{{ basic.basicMapmsg}}</p>
+			<div class="w3ls_map">
+				
+			<iframe ng-src="{{ trustSrc(basic.basicMap)}}" width="1140" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div class="w3l_contact_form">
+				<h4>Contact Form</h4>
+				<form name="contactForm" id="idcontactForm" ng-submit="addNewMsg()">
+					<input type="text" name="name" id="name" ng-model="contact.name"   placeholder="name"   required>
+					<span   ng-show="contactForm.name.$invalid && contactForm.name.$error.required && !contactForm.name.$pristine" class="help-">Your name is required.</span>  
+
+					<input type="email" name="email" id="email" ng-model="contact.email"  placeholder="email"    required>
+  					<span ng-show="contactForm.email.$invalid && contactForm.email.$error.email" class="help-block">Invalid email address.</span><span   ng-show="contactForm.email.$invalid && contactForm.email.$error.required && !contactForm.email.$pristine" class="help-">Your email is required.</span>  
+
+
+					<input type="number" name="phone" id="phone" ng-model="contact.phone" placeholder="Phone"   required  minlength="10" maxlength="15">
+            		<span ng-show="contactForm.phone.$invalid && (contactForm.phone.$error.maxlength || contactForm.phone.$error.minlength || contactForm.phone.$error.number) " class="help-block">Invalid mobile number.</span> <span   ng-show="contactForm.phone.$invalid && contactForm.phone.$error.required && !contactForm.phone.$pristine" class="help-">Your phone is required.</span>  
+
+
+					<textarea name="message"  id="message" ng-model="contact.message"   placeholder="Message"    required minlength="5" > </textarea><span   ng-show="contactForm.message.$invalid && contactForm.message.$error.required && !contactForm.message.$pristine" class="help-">Your message is required.</span>  
+
+					<input type="submit" value="Submit" ng-class="" ng-disabled="contactForm.$invalid || contactForm.$pristine "  >
+				 
+				</form>
+			</div>
+		</div>
+	</div>
+ 
+
+
+
+
+
+
+ 	<!-- Trigger the modal with a button -->
+ 	<button type="button" class="hidden " id="show_Succ_msg" data-toggle="modal" data-target="#success-submitted"> </button>
+
+ 	<!-- Modal -->
+ 	<div id="success-submitted" class="modal fade" role="dialog">
+ 	  <div class="modal-dialog" style=" margin-top: 80px;">
+
+ 	    <!-- Modal content-->
+ 	    <div class="modal-content   animated zoomInDown success-email ">
+ 	      <div class="modal-header hidden">
+ 	        <button type="button" class="close" data-dismiss="modal" id="remove_all_success"></button>
+ 	        <h4 class="modal-title"> </h4>
+ 	      </div>
+ 	      <div class="modal-body text-center here_the_msg">
+ 	         <h2>Thank you for getting in touch!</h2>
+ 	        <p>We have received your message and would like to thank you for writing to us. If your inquiry is urgent, please use the telephone number listed below, to talk to one of our staff members. Otherwise, we will reply by email shortly.</p>
+
+ 	      </div>
+ 	      <div class="modal-footer hidden"> 
+ 	      </div>
+ 	    </div>
+
+ 	  </div>
+ 	</div>
+

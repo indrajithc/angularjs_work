@@ -1,0 +1,203 @@
+
+<div class="mainCustro" >
+
+<nav class="navbar navbar-default sidebar" role="navigation">
+<div ng-include="'customer/header.html'"></div>
+</nav>
+<div class="main mainExt">
+
+<div class="container  " >
+   <div class="row">
+    <div class="col-md-11
+     col-md-offset-1">
+      <div class="panel panel-login no-shadow" >
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="login-form" action="#" method="post" role="form"    >
+
+ 
+ <div class=" "> 
+				<div class="w3l_contact_form">
+					<h4>Profile</h4>
+
+
+
+					<form action="#" method="post"> 
+						<div class="col-md-3">
+							<img src="" ng-src="{{customerUser.imagePath}}" class="image-profile-n my_image_here_cust"  onerror="javascript:this.src='assets/images/default.png'" >
+							  	<div class="col-md-12 gallery-upladed" id="image-up">
+							  	</div>
+							<span id="select-file-1-1" class="edit-mg hsow-edit-h"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+							<input ng-model="customerUser.name" type="hidden" class="name-image-r" name="">
+						</div>
+						<div class="col-md-9">
+
+						<div class="alert alert-danger alert-dismissable" ng-show="errorShow">
+						  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+						  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+						  <strong>Error!</strong><br/>{{errorShow}}
+						</div>
+
+
+
+
+							<div class="form-group">
+							  <label class="col-sm-2  padding-top-1" for="email">Name</label>
+							  <div class="col-sm-9">
+							  <label class="form-controller2">{{customerUser.name}}</label>
+							  </div>
+							  	<span class="col-sm-1 padding-top-1 hsow-edit-h">
+							  		<i ng-click="showData( 'a')" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							  	</span>
+							  <div class="input-group new-hidden-edit" ng-show="showEditName">
+							    <input ng-model="customerUser.name" type="text" class="form-control" placeholder=" "  required>
+							    <span class="input-group-addon" ng-click="update_Data( customerUser )">update</span>
+							  </div>
+							</div>
+
+
+
+							<div class="form-group">
+							  <label class="col-sm-2  padding-top-1" for="email">Eamil</label>
+							  <div class="col-sm-9">
+							  <label class="form-controller2">{{customerUser.email}}</label>
+							  </div>
+							  	<span class="col-sm-1 padding-top-1 hsow-edit-h">
+							  		<i ng-click="showData( 'b')" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							  	</span>
+							  <div class="input-group new-hidden-edit" ng-show="showEditemail">
+							    <input ng-model="customerUser.email" type="email" class="form-control" placeholder=" " required >
+							    <span class="input-group-addon" ng-click="update_Data( customerUser )">update</span>
+							  </div>
+							</div>
+
+
+
+
+							<div class="form-group">
+							  <label class="col-sm-2  padding-top-1" for="email">Mobile</label>
+							  <div class="col-sm-9">
+							  <label class="form-controller2">{{customerUser.mobile}}</label>
+							  </div>
+							  	<span class="col-sm-1 padding-top-1 hsow-edit-h">
+							  		<i ng-click="showData( 'c')" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							  	</span>
+							  <div class="input-group new-hidden-edit" ng-show="showEditmobile">
+							    <input ng-maxlength="10"  ng-minlength="10" ng-model="customerUser.mobile" type="number" class="form-control" placeholder=" "  required >
+							    <span class="input-group-addon" ng-click="update_Data( customerUser )">update</span>
+							  </div>
+							</div>
+
+
+
+
+							<div class="form-group">
+							  <label class="col-sm-2  padding-top-1" for="email">Landline</label>
+							  <div class="col-sm-9">
+							  <label class="form-controller2">{{customerUser.landline}}</label>
+							  </div>
+							  	<span class="col-sm-1 padding-top-1 hsow-edit-h">
+							  		<i ng-click="showData( 'e')" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							  	</span>
+							  <div class="input-group new-hidden-edit" ng-show="showEditlandline">
+							    <input ng-maxlength="14" ng-model="customerUser.landline" type="number" class="form-control" placeholder=" "   >
+							    <span class="input-group-addon" ng-click="update_Data( customerUser )">update</span>
+							  </div>
+							</div>
+
+
+
+
+
+
+
+
+							<div class="form-group">
+							  <label class="col-sm-2  padding-top-1" for="pin">pin</label>
+							  <div class="col-sm-9">
+							  <label class="form-controller2">{{customerUser.pin}}</label>
+							  </div>
+							  	<span class="col-sm-1 padding-top-1 hsow-edit-h">
+							  		<i ng-click="showData( 'f')" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							  	</span>
+							  <div class="input-group new-hidden-edit" ng-show="showEditpin">
+							    <input ng-maxlength="6"  ng-minlength="6" ng-model="customerUser.pin" type="number" class="form-control" placeholder=" "  >
+							    <span class="input-group-addon" ng-click="update_Data( customerUser )">update</span>
+							  </div>
+							</div>
+
+
+
+
+
+							<div class="form-group">
+							  <label class="col-sm-2  padding-top-1" for="email">address</label>
+							  <div class="col-sm-9">
+							  <label class="form-controller2">{{customerUser.address}}</label>
+							  </div>
+							  	<span class="col-sm-1 padding-top-1 hsow-edit-h">
+							  		<i ng-click="showData( 'g')" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							  	</span>
+							  <div class="input-group new-hidden-edit" ng-show="showEditaddress">
+							    <textarea ng-minlength="6" ng-model="customerUser.address" type="text" class="form-control" placeholder=" " required ></textarea>
+							    <span class="input-group-addon" ng-click="update_Data( customerUser )">update</span>
+							  </div>
+							</div>
+
+
+
+							<div class="form-group">
+							  <label class="col-sm-2  padding-top-1" for="email">dob</label>
+							  <div class="col-sm-9">
+							  <label class="form-controller2">{{customerUser.dob}}</label>
+							  </div>
+							  	<span class="col-sm-1 padding-top-1 hsow-edit-h">
+							  		<i ng-click="showData( 'd')" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							  	</span>
+							  <div class="input-group new-hidden-edit date" ng-show="showEditdob"  data-provide="datepicker" id="datepicker" data-date-format="dd-mm-yyyy">
+ 
+							    <input type="text" class="form-control datepicker" name="dob" id="udob"   ng-model="customerUser.dob"             >
+							  
+							    <div class="input-group-addon datas">
+							      <i  class="fa fa-calendar" aria-hidden="true"></i>
+
+							    </div> 
+ 
+							    <span class="input-group-addon" ng-click="update_Data( customerUser )">update</span>
+							  </div>
+							</div>
+
+
+
+
+
+
+
+												 
+	
+						</div>
+						
+ 					</form>
+				</div>
+			</div>
+
+              </form>
+ 
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>

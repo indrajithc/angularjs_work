@@ -1,0 +1,111 @@
+  
+<div class="mainCustro" >
+
+<nav class="navbar navbar-default sidebar" role="navigation">
+<div ng-include="'customer/header.html'"></div>
+</nav>
+<div class="main mainExt">
+	<div class=" " >
+	<h3 class="padding-jo">complaint</h3>
+
+ 
+	<div class="panel panel-default" ng-show="complaintSuccess">
+	  <div class="panel-body">
+	  <div class="alert alert-success alert-dismissable"  >
+	    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+	    <strong class="text-capitalize">success!</strong><br/> complaint successfully added 
+	  </div>
+	  </div>
+	</div>
+
+		 
+		<div class="panel panel-default"  ng-show=" key && name">
+		  <div class="panel-heading">
+		  	<h4 class="text-capitalize">Add new complaint</h4>
+		  </div>
+		  <div class="panel-body">
+
+		  	<div class="panel-body w3l_contact_form"  >
+		  						<form name="contactForm" id="idcontactForm" ng-submit="addNewMsg()">
+		  						<div class="col-md-4 ">		  							
+		  							<label class="col-sm-1">key </label> <p class="col-sm-10">{{key}}</p>
+		  						</div>
+		  						<div class="col-md-8 text-right">
+		  							<label class="col-sm-3">product </label> <h5 class="col-sm-9 text-left">{{name}}</h5>						
+		  						</div>
+
+		  						<input type="text" name="subject" id="subject" ng-model="contact.subject"  ng-maxlength="250"  placeholder="subject"   required>
+		  						<span   ng-show="contactForm.subject.$invalid && contactForm.subject.$error.required  && !contactForm.$pristine" class="help-">Your subject is required.</span>  
+
+
+		  							<textarea name="message"  id="message" ng-model="contact.message"   placeholder="Message"    required minlength="5" > </textarea><span   ng-show="contactForm.message.$invalid && contactForm.message.$error.required && !contactForm.$pristine" class="help-">Your message is required.</span>  
+
+		  							<input type="submit" value="Submit" ng-class="" ng-disabled="contactForm.$invalid || contactForm.$pristine "  >
+		  						 
+		  						</form>
+
+
+		  	</div>
+		  
+
+
+		  </div>
+
+
+		</div>
+
+
+
+		 
+		<div class="panel panel-default"   >
+		  <div class="panel-heading">
+		  <h3 class=" ">history</h3>
+		  </div>
+		  <div class="panel-body">
+
+		  	<div class="panel-body"  >
+
+		  		<div class="col-md-12 apdng-bt-10 border_bttt" ng-repeat="complaint in complaints">
+		  		<h5 class="apdng-bt-10">Time : {{ ' '+ complaint.date}}</h5>
+		  			
+		  		<div class="col-md-4 apdng-bt-10">		  							
+		  			<label class="col-sm-1">key </label> <p class="col-sm-10">{{complaint.idkey}}</p>
+		  		</div>
+		  		<div class="col-md-8 text-right apdng-bt-10">
+		  			<label class="col-sm-3">product </label> <h5 class="col-sm-9 text-left"><a ng-click="go(complaint.product)" href="#">{{complaint.product}}</a></h5>						
+		  		</div>
+
+
+		  			<div class="col-md-12 apdng-bt-10">
+		  			<label><strong>{{complaint.subject}}</strong></label>
+		  			<p>{{complaint.complaint}}</p>
+		  				
+		  			</div>
+		  			<div class="col-md-12 apdng-bt-10">
+		  				
+		  			</div>
+		  			
+		  		</div>
+
+
+
+		  	</div>
+		  
+
+
+		  </div>
+
+
+		</div>
+
+ 
+	</div>
+
+
+
+
+
+
+</div>
+</div>

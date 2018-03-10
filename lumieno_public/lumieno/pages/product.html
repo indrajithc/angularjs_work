@@ -1,0 +1,265 @@
+ 
+<div class="widget_4" style=" margin-bottom: 10px ; " ng-cloak>
+	   
+	   	 <h3>products</h3>
+	  
+	 	<div class="bs-example4" data-example-id="simple-responsive-table">
+
+
+
+	     <div class="table-responsive">
+	   <table class="table sortablea table-hover">
+	     <thead>
+	       <tr> 
+	         <th> name</th>
+	         <th> Category </th>	     
+	         <th> Price</th>
+	         <th> No Of Products </th>
+	         <th> new </th>
+	         <th> rating </th>
+	         <th> date </th>
+	         <th> action </th>
+	       </tr>
+	     </thead>
+	     <tbody class="">
+	  
+	       <tr ng-repeat="productz in productzs"> 
+	         <td>{{productz.name}}</td>
+	         <td>{{productz.category}}</td> 
+	         <td>
+	         <label class="color-red"><i class="fa fa-inr" aria-hidden="true"></i>{{productz.oprice}}</label><br/> 
+	         <label class="color-green"><i class="fa fa-inr" aria-hidden="true"></i> {{productz.nprice}}</label>
+	         </td>
+	         <td>{{productz.count}}</td>
+	         <td>{{productz.new}}</td>
+	         <td>{{productz.rate}}</td>
+	         <td>{{productz.date}}</td>
+	         <td><button class="btn btn-xs {{ productz.deletes ==1 ? 'btn-danger' : 'btn-info' }}" ng-class="" ng-click="editproductz( productz )">view</button> 
+	         
+	         </td> 
+	       </tr>
+	       
+	     </tbody>
+	   </table>
+	     </div> 
+	   </div>
+	    
+	  
+</div>
+
+
+
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+ 
+
+	<h3 class="text-capitalize">add new product</h3>
+	<div class="tab-content">
+		<div class="tab-pane active" id="horizontal-form">
+
+ 
+			<form name="productProfile" ng-submit="productSubmit()" >
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.category.$valid, 'has-error' : productProfile.category.$invalid && !productProfile.category.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">category</label>
+ 
+					<select class="form-control1" name="category" id="category" placeholder="Enter your category" ng-model="product.categoryl"    ng-options="option.name for option in categorys track by option.id " required>
+						
+					</select>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.category.$valid, 'glyphicon-remove' : productProfile.category.$invalid && !productProfile.category.$pristine }" ></span>
+					<span span ng-show="productProfile.category.$invalid && productProfile.category.$error.required" class="help-block">Your category is required.</span>            
+					<span ng-show="productProfile.category.$invalid && productProfile.category.$error.minlength" class="help-block">category is too short.</span>
+            		<span ng-show="productProfile.category.$invalid && productProfile.category.$error.maxlength" class="help-block">category is too long.</span> 
+				</div>    
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.name.$valid, 'has-error' : productProfile.name.$invalid && !productProfile.name.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">name</label>
+					<input type="text" class="form-control1" name="name" id="name" placeholder="Enter your name" ng-model="product.name"  ng-minlength="2" ng-maxlength="255" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.name.$valid, 'glyphicon-remove' : productProfile.name.$invalid && !productProfile.name.$pristine }" ></span>
+					<span span ng-show="productProfile.name.$invalid && productProfile.name.$error.required" class="help-block">Your name is required.</span>            
+					<span ng-show="productProfile.name.$invalid && productProfile.name.$error.minlength" class="help-block">name is too short.</span>
+            		<span ng-show="productProfile.name.$invalid && productProfile.name.$error.maxlength" class="help-block">name is too long.</span>
+            		<span ng-show="productProfile.name.$invalid && product.nameError" class="help-block">{{product.nameError}}</span>
+				</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.oldPrice.$valid, 'has-error' : productProfile.oldPrice.$invalid && !productProfile.oldPrice.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">Old Price</label>
+					<input type="number" class="form-control1" name="oldPrice" id="oldPrice" placeholder="Enter your oldPrice" ng-model="product.oldPrice"  ng-min="10" ng-max="255000000" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.oldPrice.$valid, 'glyphicon-remove' : productProfile.oldPrice.$invalid && !productProfile.oldPrice.$pristine }" ></span>
+					<span span ng-show="productProfile.oldPrice.$invalid && productProfile.oldPrice.$error.required" class="help-block">Your old Price is required.</span>            
+					<span ng-show="productProfile.oldPrice.$invalid && productProfile.oldPrice.$error.min" class="help-block"> old Price is too short.</span>
+            		<span ng-show="productProfile.oldPrice.$invalid && productProfile.oldPrice.$error.max" class="help-block"> old Price is too long.</span> 
+				</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.newPrice.$valid, 'has-error' : productProfile.newPrice.$invalid && !productProfile.newPrice.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">new Price</label>
+					<input type="number" class="form-control1" name="newPrice" id="newPrice" placeholder="Enter your newPrice" ng-model="product.newPrice"  ng-min="10" ng-max="255000000" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.newPrice.$valid, 'glyphicon-remove' : productProfile.newPrice.$invalid && !productProfile.newPrice.$pristine }" ></span>
+					<span span ng-show="productProfile.newPrice.$invalid && productProfile.newPrice.$error.required" class="help-block">Your new Price is required.</span>            
+					<span ng-show="productProfile.newPrice.$invalid && productProfile.newPrice.$error.min" class="help-block"> new Price is too short.</span>
+            		<span ng-show="productProfile.newPrice.$invalid && productProfile.newPrice.$error.max" class="help-block"> new Price is too long.</span> 
+				</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.count.$valid, 'has-error' : productProfile.count.$invalid && !productProfile.count.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">number of products</label>
+					<input type="number" class="form-control1" name="count" id="count" placeholder="Enter your count" ng-model="product.count"  ng-min="1" ng-max="255000000" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.count.$valid, 'glyphicon-remove' : productProfile.count.$invalid && !productProfile.count.$pristine }" ></span>
+					<span span ng-show="productProfile.count.$invalid && productProfile.count.$error.required" class="help-block">Your Count is required.</span>            
+					<span ng-show="productProfile.count.$invalid && productProfile.count.$error.min" class="help-block"> Count is too short.</span>
+            		<span ng-show="productProfile.count.$invalid && productProfile.count.$error.max" class="help-block"> Count is too long.</span> 
+				</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.new.$valid, 'has-error' : productProfile.new.$invalid && !productProfile.new.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">new product</label>
+					<input type="checkbox" class="form-control" name="new" id="new" placeholder="Enter your new" ng-model="product.new"  >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.new.$valid, 'glyphicon-remove' : productProfile.new.$invalid && !productProfile.new.$pristine }" ></span> 
+				</div>    
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.rating.$valid, 'has-error' : productProfile.rating.$invalid && !productProfile.rating.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">rating</label>
+					<input type="number" class="form-control1" name="rating" id="rating" placeholder="Enter your rating" ng-model="product.rating"  ng-min="" ng-max="5" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.rating.$valid, 'glyphicon-remove' : productProfile.rating.$invalid && !productProfile.rating.$pristine }" ></span>
+					<span span ng-show="productProfile.rating.$invalid && productProfile.rating.$error.required" class="help-block">Your old Price is required.</span>            
+					<span ng-show="productProfile.rating.$invalid && productProfile.rating.$error.min" class="help-block"> old Price is too short.</span>
+            		<span ng-show="productProfile.rating.$invalid && productProfile.rating.$error.max" class="help-block"> old Price is too long.</span> 
+				</div>    
+
+
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : productProfile.description.$valid, 'has-error' : productProfile.description.$invalid && !productProfile.description.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description</label>
+					<textarea  class="form-control1" name="description" id="description" placeholder="Enter your description" ng-model="product.description" ng-minlength="6"  ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : productProfile.description.$valid, 'glyphicon-remove' : productProfile.description.$invalid && !productProfile.description.$pristine }" ></span> 
+            		<span ng-show="productProfile.description.$invalid && productProfile.description.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+				<div class="form-group  has-feedback">
+			<!-- ======================================================= -->
+         <div class="panel-body ">
+
+
+
+
+				<div class=" " >
+				<button class="btn btn-info " id="select-file" type="button">select images</button>
+				</div>
+				<h4>gallery</h4>
+				<div class="row">
+				<div class="col-md-12 gallery-upladed" id="image-up">
+
+				</div>
+
+				</div>
+				<h4 style="padding-top: 20px;">Selected</h4>
+
+
+				<div class="row">
+				<div class="col-md-12 gallery-upladed" id="image-up-ok">
+
+
+
+
+
+
+				</div>
+
+				</div>
+
+				</div>
+
+
+ 
+
+			<!-- ============================================================ -->
+				</div> 
+
+
+
+				<div class="form-group has-feedback" >
+
+					<div class="col-sm-offset-5 col-sm-3">
+						<input type="submit" class="btn-primary btn" ng-disabled="productProfile.$invalid || productProfile.$pristine "  value="Submit">
+					</div>
+				</div>    
+		 
+			</form>
+		</div>
+	</div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="bs-example" data-example-id="form-validation-states-with-icons">
+		<form>
+
+		</form>
+	</div>
+</div>
+
+
+
+
+
+

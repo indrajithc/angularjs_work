@@ -1,0 +1,73 @@
+RewriteEngine on
+
+
+
+
+#view renamed 
+RewriteRule ^home$ index.php [L]  
+RewriteRule ^about$ index.php/about [L]  
+RewriteRule ^products$ index.php/products [L]  
+RewriteRule ^team$ index.php/team [L]  
+RewriteRule ^contact$ index.php/contact [L]   
+RewriteRule ^login$ index.php/login [L]    
+RewriteRule ^single$ index.php/single [L]   
+RewriteRule ^newcustomer$ index.php/newcustomer [L]   
+RewriteRule ^confirm$ index.php/newcustomer [L]   
+RewriteRule ^newpassword$ index.php/newpassword [L]   
+RewriteRule ^checkout$ index.php/checkout [L]   
+RewriteRule ^payment$ index.php/payment [L]   
+RewriteRule ^buy$ index.php/buy [L]   
+RewriteRule ^l$ lumieno/ [L]   
+
+
+
+
+
+RewriteRule ^customer-home$ index.php/customer-home [L]   
+RewriteRule ^customer-profile$ index.php/customer-profile [L]  
+RewriteRule ^customer-history$ index.php/customer-history [L]   
+RewriteRule ^customer-complaint$ index.php/customer-complaint [L]   
+
+
+RewriteRule ^path.php$ index.php [L]  
+RewriteRule ^assets/$ index.php [L]  
+RewriteRule ^pages/$ index.php [L]  
+RewriteRule ^components/$ index.php [L]  
+RewriteRule ^root/$ index.php [L]  
+RewriteRule ^uploads/$ index.php [L]  
+
+RewriteRule ^logout$ logout.php [L]  
+RewriteRule ^exit$ logout.php [L]  
+
+
+RewriteRule ^single/([^/]+)$ index.php/single?product=$1 [L] 
+RewriteRule ^confirm/([^/]+)$ index.php/confirm?key=$1 [L] 
+RewriteRule ^newpassword/([^/]+)$ index.php/newpassword?key=$1 [L] 
+
+
+#view aaaa 1 
+#RewriteRule ^login/([^/]+)$ login.php?type=$1 [L] 
+
+#RewriteRule ^category/([^/]+)$ category.php?category=$1 [L]
+#RewriteRule ^product/([^/]+)$ product.php?product=$1 [L] 
+
+#view aaaa
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^login/([^/]+)/([^/]+)$ login.php?type=$1&dest=$2 [L]
+
+
+# eg 
+#view aaaa 1
+RewriteRule ^movie/([^/]+)$ view_movie.php?movie=$1 [L]
+
+#view aaaa
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^([^/]+)/([^/]+)$ view_movie.php?base=$1&movie=$2 [L]
+
+
+#edit aaaa 2
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^editm/([^/]+)/([^/]+)$ edit_movie.php?movie=$1&type=$2 [L]

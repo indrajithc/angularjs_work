@@ -1,0 +1,172 @@
+
+
+<div class="mainCustro" >
+
+<nav class="navbar navbar-default sidebar" role="navigation">
+<div ng-include="'customer/header.html'"></div>
+</nav>
+<div class="main mainExt">
+	<div class=" "  ng-show="hideToOne">
+	<h3 class="padding-jo">history</h3>
+
+
+	<div class="panel panel-default" ng-show="success">
+	  <div class="panel-body">
+	  <div class="alert alert-success alert-dismissable"  >
+	    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+	    <strong class="text-capitalize">success!</strong><br/> product/s successfully added to your delivery queue
+	  </div>
+	  </div>
+	</div>
+
+		 
+		<div class="panel panel-default" ng-repeat="cart in carts" ng-show="cart.product.length">
+		  <div class="panel-heading">
+		  <div class="class-okd">
+		  	
+		  	<div class="col-md-3">
+		  		<label>ORDER PLACED</label>
+		  		<p>{{cart.date}}</p>
+		  	</div>
+
+		  	<div class="col-md-2">
+		  		<label>TOTAL</label>
+		  		<p> <i class="fa fa-inr" aria-hidden="true"></i>{{cart.amount}}</p>
+		  	</div>
+
+		  	<div class="col-md-3">
+		  		<label>SHIP TO</label>
+		  		<p>{{cart.customer.pin}}</p>
+		  	</div>
+
+		  	<div class="col-md-4 text-right">
+		  		<label>ORDER</label>
+		  		<p>#{{cart.key}}</p>
+		  	</div>
+		  </div>
+
+
+
+
+		  </div>
+		  <div class="panel-body">
+
+		  	<div class="panel-body" ng-repeat="product in cart.product">
+		  		  	<div class="apdng-bt-10">
+
+		  		  		<h4 class="text-capitalize text-warning" ng-show="!product.expected  && !product.ltime"><i class="fa fa-shopping-cart recho  " aria-hidden="true"></i>waiting</h4>
+		  		  		<p  ng-show="!product.expected  && !product.ltime" class="text-capitalize rechop  text-warning">preparing for dispatch </p>
+
+		  		  		<h4 class="text-capitalize text-info" ng-show="product.expected && !product.ltime"><i class="fa fa-truck recho  " aria-hidden="true"></i>expected delivery date {{product.expected}}</h4>
+		  		  		<p  ng-show="product.expected && !product.ltime" class="text-capitalize text-info rechop">your package is on its way</p>
+
+		  		  		<h4 ng-show="product.ltime" class="text-capitalize text-success"><i class="fa fa-check recho  " aria-hidden="true"></i>Delivered {{product.ltime}}</h4>
+		  		  		<p  ng-show="product.ltime" class="text-capitalize text-success rechop">Your package was delivered</p>
+		  		  	</div>
+
+		  			  <div class="col-md-8"> 
+		  			  	<img ng-src="{{product.image}}" alt=" " class="col-md-2 img-responsive" onerror="javascript:this.src='assets/images/default.png'" />
+		  			  	<div class="col-md-10">
+		  			  		<a ng-click="go( product.product.name )" href="#"><h5  class="apdng-bt-10" >{{ product.product.name }}</h5></a>
+		  			  		<h6>no of pieces <span>{{ product.count }}</span></h6> 
+		  			  		<h6>total <span class="color-red"><i class="fa fa-inr" aria-hidden="true"></i>{{ addPrice(product.charge, product.product.nprice, product.count) }}</span></h6>
+		  			  	</div>
+		  			  
+		  			  </div>
+		  			  
+		  			  <div class="col-md-4">
+		  			  	<div>
+		  			  		<button ng-click="gotoDetails(product, cart)" class="col-sm-12 btn btn-info">delivery details</button>
+		  			  	</div>
+		  			  </div>
+
+		  	</div>
+		  
+
+
+		  </div>
+
+
+		</div>
+
+ 
+	</div>
+
+	<div ng-show="!hideToOne">
+
+		<h3 class="padding-jo"></h3>
+
+
+		<div class="panel panel-default" >
+		  <div class="panel-heading" style="min-height: 3em;">
+		  		<h5 class="col-sm-10"> {{oneItem.product.name}}</h5>
+		  		<h5 class="col-sm-2 btn btn-info" ng-click="bakto()" style="float: right;"> Back</h5>
+		  </div>
+		  <div class="panel-body">
+		    	<div class="apdng-bt-10"> 
+
+
+		    	<h4 class="text-capitalize text-warning" ng-show="!oneItem.expected  && !oneItem.ltime"><i class="fa fa-shopping-cart recho " aria-hidden="true"></i>waiting</h4>
+		    	<p  ng-show="!oneItem.expected  && !oneItem.ltime" class="text-capitalize rechop  text-warning">preparing for dispatch </p>
+
+		    	<h4 class="text-capitalize text-info" ng-show="oneItem.expected && !oneItem.ltime"><i class="fa fa-truck recho " aria-hidden="true"></i>expected delivery date {{oneItem.expected}}</h4>
+		    	<p  ng-show="oneItem.expected && !oneItem.ltime" class="text-capitalize text-info rechop">your package is on its way</p>
+
+		    	<h4 ng-show="oneItem.ltime" class="text-capitalize text-success"><i class="fa fa-check recho " aria-hidden="true"></i>Delivered {{oneItem.ltime}}</h4>
+		    	<p  ng-show="oneItem.ltime" class="text-capitalize text-success rechop">Your package was delivered</p>
+		    	
+
+		    		 
+		    	</div> 
+<div class="row">		  	  <div class="col-md-8"> 
+		  	  	<img ng-src="{{oneItem.image}}" alt=" " class="col-md-2 img-responsive" onerror="javascript:this.src='assets/images/default.png'" />
+		  	  	<div class="col-md-10">
+		  	  	<a ng-click="go( oneItem.product.name )" href="#">
+		  	  		<h5  class="apdng-bt-10" >{{ oneItem.product.name }}</h5>
+		  	  	</a>
+		  	  		<h6>no of pieces <span>{{ oneItem.count }}</span></h6>  
+		  	  		<h6>total <span class="color-red  padding-left-5 "><i class="fa fa-inr  " aria-hidden="true"></i>{{ addPrice(oneItem.charge, oneItem.product.nprice, oneItem.count) }}</span></h6>
+		  	  	</div>
+		  	  
+		  	  </div>
+ 
+		  	  	 
+		  	  </div>
+		  	  <div class="col-md-4" ng-show="oneCart.distributor.email">
+		  	  <h4 class="apdng-bt-10">distributor</h4> 
+		  	  	<img ng-src="{{oneCart.distributor.image}}" alt=" " class="col-md-4 img-responsive" onerror="javascript:this.src='assets/images/default.png'" />
+		  	  	<div class="col-md-8">
+		  	  		<h5 class="apdng-bt-10">{{ oneCart.distributor.name }}</h5>
+		  	  		<h6  class=" " ><i class="fa fa-mobile padding-right-5 " aria-hidden="true"></i>{{ oneCart.distributor.mobile }}</h6>
+		  	  		<h6><a ng-href="mailto:{{oneCart.distributor.email}}"><i class="fa fa-envelope padding-right-5 " aria-hidden="true"></i>{{oneCart.distributor.email}}</a></h6>  
+		  	  		 
+		  	  	</div>
+		  	  
+		  	  </div>
+
+		  	  </div>
+
+		  	  <div class="col-md-4  padding-top-5">
+		  	  	<p><i class="fa fa-map-marker padding-right-5 " aria-hidden="true"></i>{{oneCart.customer.address}}</p>
+		  	  	<h5>{{oneCart.customer.pin}}</h5>
+		  	  	
+		  	  </div>
+
+		  	  <div class="col-md-8 padding-top-5 text-right">
+		  	  	<p>#{{oneCart.key}}</p>
+		  	  	<h5 class="col-sm-offset-9 col-sm-3 btn btn-warning " ng-click="gotoComplaint(oneCart.key, oneItem.product.name )">complaint</h5>
+		  	  	
+		  	  </div>
+
+
+		  </div>
+		</div>
+
+	</div>
+
+
+
+
+</div>
+</div>

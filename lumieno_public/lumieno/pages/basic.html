@@ -1,0 +1,379 @@
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+ 
+
+	<h3 class="col-sm-11 text-capitalize">Basic</h3>
+	<a href="links" class="col-sm-1 btn btn-xs btn-info">link</a>
+	<div class="tab-content">
+		<div class="tab-pane active" id="horizontal-form">
+
+ 
+			<form name="basicProfile" ng-submit="adminBasicSubmit()" >
+
+
+					 
+
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.address.$valid, 'has-error' : basicProfile.address.$invalid && !basicProfile.address.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">address</label>
+	<textarea  class="form-control1" name="address" id="address" placeholder="Enter your address" ng-model="basic.address" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.address.$valid, 'glyphicon-remove' : basicProfile.address.$invalid && !basicProfile.address.$pristine }" ></span>
+	<span span ng-show="basicProfile.address.$invalid && basicProfile.address.$error.required" class="help-block">Your address is required.</span>   
+	<span ng-show="basicProfile.address.$invalid && basicProfile.address.$error.minlength" class="help-block">address is too short.</span> 
+</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.email.$valid, 'has-error' : basicProfile.email.$invalid && !basicProfile.email.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">email</label>
+	<input type="email" class="form-control1" name="email" id="email" placeholder="Enter your email" ng-model="basic.email" ng-maxlength="255"   >
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.email.$valid, 'glyphicon-remove' : basicProfile.email.$invalid && !basicProfile.email.$pristine }" ></span>
+	<span span ng-show="basicProfile.email.$invalid && basicProfile.email.$error.required" class="help-block">Your email is required.</span>   
+	<span ng-show="basicProfile.email.$invalid && basicProfile.email.$error.maxlength" class="help-block">email is too long.</span>
+	<span ng-show="basicProfile.email.$invalid && basicProfile.email.$error.email" class="help-block">Invalid email address.</span>
+</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.mobile.$valid, 'has-error' : basicProfile.mobile.$invalid && !basicProfile.mobile.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">mobile number</label>
+	<input type="number" class="form-control1" name="mobile" id="mobile" placeholder="Enter your mobile number" ng-model="basic.mobile" ng-minlength="10"  ng-maxlength="15"   >
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.mobile.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !basicProfile.mobile.$pristine }" ></span>
+	<span span ng-show="basicProfile.mobile.$invalid && basicProfile.mobile.$error.required" class="help-block">Your mobile number is required.</span>   
+	<span ng-show="basicProfile.mobile.$invalid && (basicProfile.mobile.$error.maxlength || basicProfile.mobile.$error.minlength || basicProfile.mobile.$error.number) " class="help-block">Invalid mobile number.</span> 
+</div>    
+
+
+
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.landline.$valid, 'has-error' : basicProfile.landline.$invalid && !basicProfile.landline.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">landline number</label>
+	<input type="number" class="form-control1" name="landline" id="landline" placeholder="Enter your landline number" ng-model="basic.landline" ng-minlength="6"  ng-maxlength="14"   >
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.landline.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !basicProfile.landline.$pristine }" ></span>
+	<span span ng-show="basicProfile.landline.$invalid && basicProfile.landline.$error.required" class="help-block">Your landline number is required.</span>   
+	<span ng-show="basicProfile.landline.$invalid && (basicProfile.landline.$error.maxlength || basicProfile.landline.$error.minlength || basicProfile.landline.$error.number) " class="help-block">Invalid landline number.</span> 
+</div>    
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.description1.$valid, 'has-error' : basicProfile.description1.$invalid && !basicProfile.description1.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description1</label>
+					<input type="text" class="form-control1" name="description1" id="description1" placeholder="Enter your description1" ng-model="basic.description1"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.description1.$valid, 'glyphicon-remove' : basicProfile.description1.$invalid && !basicProfile.description1.$pristine }" ></span>
+					<span span ng-show="basicProfile.description1.$invalid && basicProfile.description1.$error.required" class="help-block">Your description1 is required.</span>            
+					<span ng-show="basicProfile.description1.$invalid && basicProfile.description1.$error.minlength" class="help-block">description1 is too short.</span>
+            		<span ng-show="basicProfile.description1.$invalid && basicProfile.description1.$error.maxlength" class="help-block">description1 is too long.</span>
+				</div>    
+
+		 
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.description2.$valid, 'has-error' : basicProfile.description2.$invalid && !basicProfile.description2.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description2</label>
+					<input type="text" class="form-control1" name="description2" id="description2" placeholder="Enter your description2" ng-model="basic.description2"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.description2.$valid, 'glyphicon-remove' : basicProfile.description2.$invalid && !basicProfile.description2.$pristine }" ></span>
+					<span span ng-show="basicProfile.description2.$invalid && basicProfile.description2.$error.required" class="help-block">Your description2 is required.</span>            
+					<span ng-show="basicProfile.description2.$invalid && basicProfile.description2.$error.minlength" class="help-block">description2 is too short.</span>
+            		<span ng-show="basicProfile.description2.$invalid && basicProfile.description2.$error.maxlength" class="help-block">description2 is too long.</span>
+				</div>    
+
+		 
+
+ 
+		 
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.description3.$valid, 'has-error' : basicProfile.description3.$invalid && !basicProfile.description3.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description3</label>
+					<input type="text" class="form-control1" name="description3" id="description3" placeholder="Enter your description3" ng-model="basic.description3"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.description3.$valid, 'glyphicon-remove' : basicProfile.description3.$invalid && !basicProfile.description3.$pristine }" ></span>
+					<span span ng-show="basicProfile.description3.$invalid && basicProfile.description3.$error.required" class="help-block">Your description3 is required.</span>            
+					<span ng-show="basicProfile.description3.$invalid && basicProfile.description3.$error.minlength" class="help-block">description3 is too short.</span>
+            		<span ng-show="basicProfile.description3.$invalid && basicProfile.description3.$error.maxlength" class="help-block">description3 is too long.</span>
+				</div>    
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.description4.$valid, 'has-error' : basicProfile.description4.$invalid && !basicProfile.description4.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description4</label>
+					<input type="text" class="form-control1" name="description4" id="description4" placeholder="Enter your description4" ng-model="basic.description4"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.description4.$valid, 'glyphicon-remove' : basicProfile.description4.$invalid && !basicProfile.description4.$pristine }" ></span>
+					<span span ng-show="basicProfile.description4.$invalid && basicProfile.description4.$error.required" class="help-block">Your description4 is required.</span>            
+					<span ng-show="basicProfile.description4.$invalid && basicProfile.description4.$error.minlength" class="help-block">description4 is too short.</span>
+            		<span ng-show="basicProfile.description4.$invalid && basicProfile.description4.$error.maxlength" class="help-block">description4 is too long.</span>
+				</div>    
+
+
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.features1H.$valid, 'has-error' : basicProfile.features1H.$invalid && !basicProfile.features1H.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">features1H</label>
+					<input type="text" class="form-control1" name="features1H" id="features1H" placeholder="Enter your features1H" ng-model="basic.features1H"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.features1H.$valid, 'glyphicon-remove' : basicProfile.features1H.$invalid && !basicProfile.features1H.$pristine }" ></span>
+					<span span ng-show="basicProfile.features1H.$invalid && basicProfile.features1H.$error.required" class="help-block">Your features1H is required.</span>            
+					<span ng-show="basicProfile.features1H.$invalid && basicProfile.features1H.$error.minlength" class="help-block">features1H is too short.</span>
+            		<span ng-show="basicProfile.features1H.$invalid && basicProfile.features1H.$error.maxlength" class="help-block">features1H is too long.</span>
+				</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.features1M.$valid, 'has-error' : basicProfile.features1M.$invalid && !basicProfile.features1M.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">features1M</label>
+	<textarea  class="form-control1" name="features1M" id="features1M" placeholder="Enter your features1M" ng-model="basic.features1M" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.features1M.$valid, 'glyphicon-remove' : basicProfile.features1M.$invalid && !basicProfile.features1M.$pristine }" ></span>
+	<span span ng-show="basicProfile.features1M.$invalid && basicProfile.features1M.$error.required" class="help-block">Your features1M is required.</span>   
+	<span ng-show="basicProfile.features1M.$invalid && basicProfile.features1M.$error.minlength" class="help-block">features1M is too short.</span> 
+</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.features2H.$valid, 'has-error' : basicProfile.features2H.$invalid && !basicProfile.features2H.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">features2H</label>
+					<input type="text" class="form-control1" name="features2H" id="features2H" placeholder="Enter your features2H" ng-model="basic.features2H"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.features2H.$valid, 'glyphicon-remove' : basicProfile.features2H.$invalid && !basicProfile.features2H.$pristine }" ></span>
+					<span span ng-show="basicProfile.features2H.$invalid && basicProfile.features2H.$error.required" class="help-block">Your features2H is required.</span>            
+					<span ng-show="basicProfile.features2H.$invalid && basicProfile.features2H.$error.minlength" class="help-block">features2H is too short.</span>
+            		<span ng-show="basicProfile.features2H.$invalid && basicProfile.features2H.$error.maxlength" class="help-block">features2H is too long.</span>
+				</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.features2M.$valid, 'has-error' : basicProfile.features2M.$invalid && !basicProfile.features2M.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">features2M</label>
+	<textarea  class="form-control1" name="features2M" id="features2M" placeholder="Enter your features2M" ng-model="basic.features2M" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.features2M.$valid, 'glyphicon-remove' : basicProfile.features2M.$invalid && !basicProfile.features2M.$pristine }" ></span>
+	<span span ng-show="basicProfile.features2M.$invalid && basicProfile.features2M.$error.required" class="help-block">Your features2M is required.</span>   
+	<span ng-show="basicProfile.features2M.$invalid && basicProfile.features2M.$error.minlength" class="help-block">features2M is too short.</span> 
+</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.features3H.$valid, 'has-error' : basicProfile.features3H.$invalid && !basicProfile.features3H.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">features3H</label>
+					<input type="text" class="form-control1" name="features3H" id="features3H" placeholder="Enter your features3H" ng-model="basic.features3H"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.features3H.$valid, 'glyphicon-remove' : basicProfile.features3H.$invalid && !basicProfile.features3H.$pristine }" ></span>
+					<span span ng-show="basicProfile.features3H.$invalid && basicProfile.features3H.$error.required" class="help-block">Your features3H is required.</span>            
+					<span ng-show="basicProfile.features3H.$invalid && basicProfile.features3H.$error.minlength" class="help-block">features3H is too short.</span>
+            		<span ng-show="basicProfile.features3H.$invalid && basicProfile.features3H.$error.maxlength" class="help-block">features3H is too long.</span>
+				</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.features3M.$valid, 'has-error' : basicProfile.features3M.$invalid && !basicProfile.features3M.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">features3M</label>
+	<textarea  class="form-control1" name="features3M" id="features3M" placeholder="Enter your features3M" ng-model="basic.features3M" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.features3M.$valid, 'glyphicon-remove' : basicProfile.features3M.$invalid && !basicProfile.features3M.$pristine }" ></span>
+	<span span ng-show="basicProfile.features3M.$invalid && basicProfile.features3M.$error.required" class="help-block">Your features3M is required.</span>   
+	<span ng-show="basicProfile.features3M.$invalid && basicProfile.features3M.$error.minlength" class="help-block">features3M is too short.</span> 
+</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.aboutH.$valid, 'has-error' : basicProfile.aboutH.$invalid && !basicProfile.aboutH.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">aboutH</label>
+					<input type="text" class="form-control1" name="aboutH" id="aboutH" placeholder="Enter your aboutH" ng-model="basic.aboutH"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.aboutH.$valid, 'glyphicon-remove' : basicProfile.aboutH.$invalid && !basicProfile.aboutH.$pristine }" ></span>
+					<span span ng-show="basicProfile.aboutH.$invalid && basicProfile.aboutH.$error.required" class="help-block">Your aboutH is required.</span>            
+					<span ng-show="basicProfile.aboutH.$invalid && basicProfile.aboutH.$error.minlength" class="help-block">aboutH is too short.</span>
+            		<span ng-show="basicProfile.aboutH.$invalid && basicProfile.aboutH.$error.maxlength" class="help-block">aboutH is too long.</span>
+				</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.aboutM.$valid, 'has-error' : basicProfile.aboutM.$invalid && !basicProfile.aboutM.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">aboutM</label>
+	<textarea  class="form-control1" name="aboutM" id="aboutM" placeholder="Enter your aboutM" ng-model="basic.aboutM" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.aboutM.$valid, 'glyphicon-remove' : basicProfile.aboutM.$invalid && !basicProfile.aboutM.$pristine }" ></span>
+	<span span ng-show="basicProfile.aboutM.$invalid && basicProfile.aboutM.$error.required" class="help-block">Your aboutM is required.</span>   
+	<span ng-show="basicProfile.aboutM.$invalid && basicProfile.aboutM.$error.minlength" class="help-block">aboutM is too short.</span> 
+</div>    
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : basicProfile.aboutHH.$valid, 'has-error' : basicProfile.aboutHH.$invalid && !basicProfile.aboutHH.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">aboutHH</label>
+					<input type="text" class="form-control1" name="aboutHH" id="aboutHH" placeholder="Enter your aboutHH" ng-model="basic.aboutHH"  ng-minlength="2" ng-maxlength="255"   >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : basicProfile.aboutHH.$valid, 'glyphicon-remove' : basicProfile.aboutHH.$invalid && !basicProfile.aboutHH.$pristine }" ></span>
+					<span span ng-show="basicProfile.aboutHH.$invalid && basicProfile.aboutHH.$error.required" class="help-block">Your aboutHH is required.</span>            
+					<span ng-show="basicProfile.aboutHH.$invalid && basicProfile.aboutHH.$error.minlength" class="help-block">aboutHH is too short.</span>
+            		<span ng-show="basicProfile.aboutHH.$invalid && basicProfile.aboutHH.$error.maxlength" class="help-block">aboutHH is too long.</span>
+				</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.aboutMM.$valid, 'has-error' : basicProfile.aboutMM.$invalid && !basicProfile.aboutMM.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">aboutMM</label>
+	<textarea  class="form-control1" name="aboutMM" id="aboutMM" placeholder="Enter your aboutMM" ng-model="basic.aboutMM" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.aboutMM.$valid, 'glyphicon-remove' : basicProfile.aboutMM.$invalid && !basicProfile.aboutMM.$pristine }" ></span>
+	<span span ng-show="basicProfile.aboutMM.$invalid && basicProfile.aboutMM.$error.required" class="help-block">Your aboutMM is required.</span>   
+	<span ng-show="basicProfile.aboutMM.$invalid && basicProfile.aboutMM.$error.minlength" class="help-block">aboutMM is too short.</span> 
+</div>    
+
+
+
+
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.vision.$valid, 'has-error' : basicProfile.vision.$invalid && !basicProfile.vision.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">vision</label>
+	<textarea  class="form-control1" name="vision" id="vision" placeholder="Enter your vision" ng-model="basic.vision" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.vision.$valid, 'glyphicon-remove' : basicProfile.vision.$invalid && !basicProfile.vision.$pristine }" ></span>
+	<span span ng-show="basicProfile.vision.$invalid && basicProfile.vision.$error.required" class="help-block">Your vision is required.</span>   
+	<span ng-show="basicProfile.vision.$invalid && basicProfile.vision.$error.minlength" class="help-block">vision is too short.</span> 
+</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.mission.$valid, 'has-error' : basicProfile.mission.$invalid && !basicProfile.mission.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">mission</label>
+	<textarea  class="form-control1" name="mission" id="mission" placeholder="Enter your mission" ng-model="basic.mission" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.mission.$valid, 'glyphicon-remove' : basicProfile.mission.$invalid && !basicProfile.mission.$pristine }" ></span>
+	<span span ng-show="basicProfile.mission.$invalid && basicProfile.mission.$error.required" class="help-block">Your mission is required.</span>   
+	<span ng-show="basicProfile.mission.$invalid && basicProfile.mission.$error.minlength" class="help-block">mission is too short.</span> 
+</div>    
+
+
+				<div class="form-group  has-feedback">
+					<label class="control-label text-capitalize" for="">image</label>
+					 <div class=""> 
+						<div class="input-group">
+							<span class="input-group-btn" style="   ">
+								<a class="btn btn-info" id="select-file-1-2"> select image</a>
+							</span>
+							 
+
+							<select class="form-control"   id="user_image"  " name="user_image" value=" " ratio= "1 / 1" ng-model="basic.image"  ng-change="updateImage(basic.image  )"   >
+								<option ng-repeat="x in images" value="{{x.name}}">{{x.name}}</option>
+							</select>
+							<span span ng-show="basicProfile.image.$invalid && basicProfile.image.$error.required" class="help-block">Your address is required.</span>   
+
+						</div>
+						<div class="col-md-12 gallery-upladed" id="image-up">
+						</div>
+						<div class="photome">              
+							<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{basic.image}}" class="img-rounded  my_image_here_cust" alt="update image" id="" > 
+						</div>
+					 </div>
+				</div> 
+
+
+
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.team.$valid, 'has-error' : basicProfile.team.$invalid && !basicProfile.team.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">team</label>
+	<textarea  class="form-control1" name="team" id="team" placeholder="Enter your team" ng-model="basic.team" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.team.$valid, 'glyphicon-remove' : basicProfile.team.$invalid && !basicProfile.team.$pristine }" ></span>
+	<span span ng-show="basicProfile.team.$invalid && basicProfile.team.$error.required" class="help-block">Your team is required.</span>   
+	<span ng-show="basicProfile.team.$invalid && basicProfile.team.$error.minlength" class="help-block">team is too short.</span> 
+</div>    
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.map.$valid, 'has-error' : basicProfile.map.$invalid && !basicProfile.map.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">map</label>
+	<textarea  class="form-control1" name="map" id="map" placeholder="Enter your map" ng-model="basic.map" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.map.$valid, 'glyphicon-remove' : basicProfile.map.$invalid && !basicProfile.map.$pristine }" ></span>
+	<span span ng-show="basicProfile.map.$invalid && basicProfile.map.$error.required" class="help-block">Your map is required.</span>   
+	<span ng-show="basicProfile.map.$invalid && basicProfile.map.$error.minlength" class="help-block">map is too short.</span> 
+</div>    
+
+
+
+<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : basicProfile.mapMsg.$valid, 'has-error' : basicProfile.mapMsg.$invalid && !basicProfile.mapMsg.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">mapMsg</label>
+	<textarea  class="form-control1" name="mapMsg" id="mapMsg" placeholder="Enter your mapMsg" ng-model="basic.mapMsg" ng-minlength="10"   ></textarea>
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : basicProfile.mapMsg.$valid, 'glyphicon-remove' : basicProfile.mapMsg.$invalid && !basicProfile.mapMsg.$pristine }" ></span>
+	<span span ng-show="basicProfile.mapMsg.$invalid && basicProfile.mapMsg.$error.required" class="help-block">Your mapMsg is required.</span>   
+	<span ng-show="basicProfile.mapMsg.$invalid && basicProfile.mapMsg.$error.minlength" class="help-block">mapMsg is too short.</span> 
+</div>    
+
+
+ 
+ 
+				<div class="form-group has-feedback" >
+
+					<div class="col-sm-offset-5 col-sm-3">
+						<input type="submit" class="btn-primary btn" ng-disabled="basicProfile.$invalid || dminProfile.$pristine "  value="Submit">
+					</div>
+				</div>    
+		 
+				
+
+			</form>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<form role="form" class="form-horizontal">
+
+		</form>
+	</div>
+	<div class="bs-example" data-example-id="form-validation-states-with-icons">
+		<form>
+
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

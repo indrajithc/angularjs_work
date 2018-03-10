@@ -1,0 +1,57 @@
+
+<!-- checkout -->
+<div class="checkout margin-top-1em">
+	<div class="container">
+		<h3>Ypayment <span></span></h3>
+
+		<div class="col-md-7">
+			<table class="table">
+			<thead>
+				<tr>
+					<th>SL No.</th>
+					<th>Product Name</th>
+					<th>Quality</th>
+					<th>Service Charges</th>
+					<th>Price</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr  ng-repeat="cart in carts">
+					<td>{{$index+1}}</td>
+					<td>{{cart.product.name }}</td>
+					<td>{{cart.count}}</td>
+					<td>{{cart.charge}}</td>
+					<td>{{cart.product.nprice}}</td>
+					<td><span><i class="fa fa-inr" aria-hidden="true"></i> {{ addPrice(cart.charge, cart.product.nprice, cart.count) }} </span></td>
+				</tr>
+				
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Total</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><i class="fa fa-inr" aria-hidden="true"></i>{{ getTotal(carts) }} </td>
+				</tr>
+			</tfoot>
+				
+			</table>
+		</div>
+
+		<div class="col-md-5 " >
+			<div>
+				<button class="col-sm-12 btn btn-success buttomproc" ng-click="cashOnDeliv()">confirm cash on delivery </button>
+			</div>
+				<div>
+				<button class="col-sm-12 btn btn-warning buttomproc" disabled="disabled">confirm online payment </button>
+			</div>
+			
+		</div>
+
+
+
+	</div>
+</div>

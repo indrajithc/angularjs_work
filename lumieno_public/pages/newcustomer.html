@@ -1,0 +1,163 @@
+ 
+
+<div class="container margin-to-10" >
+   <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="new-form"   >
+
+ 
+ 			<div class=" "> 
+				<div class="w3l_contact_form">
+					<h4>new Customer</h4>
+
+				 
+
+								<form name="customerProfile" ng-submit="customerProfileSubmit()" ng-show="showInitioal" >
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : customerProfile.name.$valid, 'has-error' : customerProfile.name.$invalid && !customerProfile.name.$pristine }">
+ 
+										<input type="text" class="form-control1" name="name" id="name" placeholder="Enter your name" ng-model="customer.name"  ng-minlength="2" ng-maxlength="255" required >
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : customerProfile.name.$valid, 'glyphicon-remove' : customerProfile.name.$invalid && !customerProfile.name.$pristine }" ></span>
+										<span span ng-show="customerProfile.name.$invalid && customerProfile.name.$error.required && !customerProfile.name.$pristine " class="help-block">Your name is required.</span>            
+										<span ng-show="customerProfile.name.$invalid && customerProfile.name.$error.minlength" class="help-block">name is too short.</span>
+					            		<span ng-show="customerProfile.name.$invalid && customerProfile.name.$error.maxlength" class="help-block">name is too long.</span>
+									</div>    
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : customerProfile.email.$valid, 'has-error' : customerProfile.email.$invalid && !customerProfile.email.$pristine }">
+ 
+										<input type="email" class="form-control1" name="email" id="email" placeholder="Enter your email" ng-model="customer.email" ng-maxlength="255" ng-change="emailError = null " required >
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : customerProfile.email.$valid, 'glyphicon-remove' : customerProfile.email.$invalid && !customerProfile.email.$pristine }" ></span>
+										<span span ng-show="customerProfile.email.$invalid && customerProfile.email.$error.required && !customerProfile.email.$pristine " class="help-block">Your email is required.</span>   
+					            		<span ng-show="customerProfile.email.$invalid && customerProfile.email.$error.maxlength" class="help-block">email is too long.</span>
+					  					<span ng-show="customerProfile.email.$invalid && customerProfile.email.$error.email" class="help-block">Invalid email address.</span>
+					  					<span ng-show="customerProfile.email.$invalid && emailError" class="help-block">{{emailError}}</span>
+
+									</div>    
+
+
+
+
+
+					                      
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : customerProfile.mobile.$valid, 'has-error' : customerProfile.mobile.$invalid && !customerProfile.mobile.$pristine }">
+ 
+										<input type="number" class="form-control1" name="mobile" id="mobile" placeholder="Enter your mobile number" ng-model="customer.mobile" ng-minlength="10"  ng-maxlength="10" ng-change=" mobileError =null " required >
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : customerProfile.mobile.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !customerProfile.mobile.$pristine }" ></span>
+										<span span ng-show="customerProfile.mobile.$invalid && customerProfile.mobile.$error.required && !customerProfile.mobile.$pristine " class="help-block">Your mobile number is required.</span>   
+					            		<span ng-show="customerProfile.mobile.$invalid && (customerProfile.mobile.$error.maxlength || customerProfile.mobile.$error.minlength || customerProfile.mobile.$error.number) " class="help-block">Invalid mobile number.</span> 
+
+					  					<span ng-show="customerProfile.mobile.$invalid && mobileError" class="help-block">{{mobileError}}</span>
+									</div>    
+
+
+
+
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : customerProfile.address.$valid, 'has-error' : customerProfile.address.$invalid && !customerProfile.address.$pristine }">
+ 
+										<textarea  class="form-control1" name="address" id="address" placeholder="Enter your address" ng-model="customer.address" ng-minlength="10" required ></textarea>
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : customerProfile.address.$valid, 'glyphicon-remove' : customerProfile.address.$invalid && !customerProfile.address.$pristine }" ></span>
+										<span span ng-show="customerProfile.address.$invalid && customerProfile.address.$error.required && !customerProfile.address.$pristine " class="help-block">Your address is required.</span>   
+					            		<span ng-show="customerProfile.address.$invalid && customerProfile.address.$error.minlength" class="help-block">address is too short.</span> 
+									</div>    
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : customerProfile.pin.$valid, 'has-error' : customerProfile.pin.$invalid && !customerProfile.pin.$pristine }">
+ 
+										<input type="number" class="form-control1" name="pin" id="pin" placeholder="Enter your pin number" ng-model="customer.pin" ng-minlength="6"  ng-maxlength="10" required >
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : customerProfile.pin.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !customerProfile.pin.$pristine }" ></span>
+										<span span ng-show="customerProfile.pin.$invalid && customerProfile.pin.$error.required && !customerProfile.pin.$pristine" class="help-block">Your pin is required.</span>   
+					            		<span ng-show="customerProfile.mobile.$invalid && (customerProfile.mobile.$error.maxlength || customerProfile.mobile.$error.minlength || customerProfile.mobile.$error.number) " class="help-block">Invalid pin.</span> 
+									</div>    
+
+
+
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : customerProfile.password.$valid, 'has-error' : customerProfile.password.$invalid && !customerProfile.password.$pristine }">
+ 
+										<input type="password" class="form-control1" name="password" id="password" placeholder="Enter your password" ng-model="customer.password"  ng-minlength="6" ng-maxlength="255" required >
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : customerProfile.password.$valid, 'glyphicon-remove' : customerProfile.password.$invalid && !customerProfile.password.$pristine }" ></span>
+										<span span ng-show="customerProfile.password.$invalid && customerProfile.password.$error.required && !customerProfile.password.$pristine" class="help-block">Your password is required.</span>            
+										<span ng-show="customerProfile.password.$invalid && customerProfile.password.$error.minlength" class="help-block">password is too short.</span>
+					            		<span ng-show="customerProfile.password.$invalid && customerProfile.password.$error.maxlength" class="help-block">password is too long.</span>
+									</div>   
+
+
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : customerProfile.repassword.$valid, 'has-error' : customerProfile.repassword.$invalid && !customerProfile.repassword.$pristine }">
+ 
+										<input type="password" class="form-control1" name="repassword" id="repassword" placeholder="Confirm your password" ng-model="customer.repassword"  ng-minlength="6" ng-maxlength="255"  compare-to="customer.password" required >
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : customerProfile.repassword.$valid, 'glyphicon-remove' : customerProfile.repassword.$invalid && !customerProfile.repassword.$pristine }" ></span>
+										<span span ng-show="customerProfile.repassword.$invalid && customerProfile.repassword.$error.required && !customerProfile.repassword.$pristine" class="help-block">Your password is required.</span>            
+										<span ng-show="customerProfile.repassword.$invalid && customerProfile.repassword.$error.minlength" class="help-block">password is too short.</span>
+					            		<span ng-show="customerProfile.repassword.$invalid && customerProfile.repassword.$error.maxlength" class="help-block">password is too long.</span>
+					            		<span ng-show="customerProfile.repassword.$invalid  &&  customerProfile.repassword.$error && (customer.repassword !== customer.password) && !customerProfile.repassword.$error.minlength && !customerProfile.repassword.$error.maxlength  " class="help-block">password mismatch.</span>
+									</div>   
+
+
+
+					 
+									<div class="form-group has-feedback" >
+ 
+											<input type="submit"   ng-disabled="customerProfile.$invalid || customerProfile.$pristine "  value="Submit">
+										 
+									</div>     
+
+								</form>
+ 
+
+								<form ng-show="!showInitioal" >
+
+								<div class="alert  {{msg.class}}" ng-show="msg.show">
+								  <i class="fa  {{msg.icon}}" aria-hidden="true"></i>
+								  <strong>{{msg.sub}}</strong> {{msg.msg}}
+								</div>
+
+									
+
+								</form>
+
+
+
+
+
+					<div class="customer-botto">
+					  <a href="login">already have an account</a>
+					</div>
+				</div>
+			</div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

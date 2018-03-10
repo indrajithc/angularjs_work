@@ -1,0 +1,93 @@
+
+<div class="container margin-to-10" >
+   <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="login-form" action="#" method="post" role="form"   ng-show="login.customer">
+
+ 
+ <div class=" "> 
+				<div class="w3l_contact_form">
+					<h4>Customer Login</h4>
+
+          <div class="alert alert-danger alert-dismissable" ng-show="error.customer">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <strong>Error!</strong> username or password is incorrect
+          </div>
+
+					<form action="#" method="post"> 
+
+						<input ng-change="error.customer = false; errorCustomerEmail= false;"  ng-change="loginCustomerError = false" placeholder="email" type="email" name="email" ng-model="emailCustomer"  value="Email"   required="required">
+                        <p class="alert-danger" ng-show="errorCustomerEmail"> invalid email address</p>
+						
+            <input  ng-change="error.customer = false; errorCustomerPassword = false;"  ng-change="loginCustomerError = false"  placeholder="password"  type="password" name="password" ng-model="passwordCustomer" value="Phone"   required="required"> 
+                        <p class="alert-danger" ng-show="errorCustomerPassword"> invalid email password</p>
+						<input type="button" ng-click="loginForCustomer()" value="Login" ng-disabled="disabledCustomer">
+
+           <div class="customer-botto">
+             <a href="newcustomer">new Customer !</a>
+             <a href="newpassword">forgot password</a>
+           </div>
+					</form>
+				</div>
+			</div>
+
+              </form>
+              <form id="register-form" action="#" method="post" role="form"   ng-show="!login.customer">
+                
+
+
+                 
+                 <div class=" ">
+                				 
+                				<div class="w3l_contact_form">
+                					<h4>Distributor Login</h4>
+
+
+          <div class="alert alert-danger alert-dismissable" ng-show="error.distributor">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <strong>Error!</strong> username or password is incorrect
+          </div>
+                					<form action="#" method="post"> 
+                						<input ng-change="error.distributor = false; errorDistributorEmail = false;" placeholder="email" type="email" name="email" ng-model="emailDistributor" value="Email"   required="required">
+                            <p class="alert-danger" ng-show="errorDistributorEmail"> invalid email address</p>
+                						<input ng-change="error.distributor = false; errorDistributorPassword = false;" placeholder="password" type="password" name="password" ng-model="passwordDistributor" value="Phone"  required="required" >
+                            <p class="alert-danger" ng-show="errorDistributorPassword"> invalid email password</p>
+
+                						<input type="button" ng-click="loginForDistributor()" value="Login" ng-disabled="disabledDistributor">
+
+
+                					</form>
+                          <div class="customer-botto"> 
+             <a href="newpassword">forgot password</a>
+           </div>
+                				</div>
+                			</div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6 tabs">
+              <a  ng-class="{ 'active' : login.customer  }"  id="login-form-link"><div class="login" ng-click="loginMe( true)" >Customer</div></a>
+            </div>
+            <div class="col-xs-6 tabs">
+              <a   ng-class="{ 'active' : !login.customer  }"  id="register-form-link"><div class="login"  ng-click="loginMe( false )" >Distributor</div></a>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ 

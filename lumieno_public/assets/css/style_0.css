@@ -1,0 +1,68 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity:1;
+}
+html {
+	overflow-x: hidden;
+}
+
+.jus-a-height {
+	padding: 3em;
+	background: #f5f5f5;
+}
+
+.main-admin-img {
+	
+	width: 50px;
+	height: 50px;
+}
+
+.container>.w3agile_footer_copy>p>a:first-child, .container>.w3agile_footer_copy>p>span.nowu, .container>.w3agile_footer_copy>p>a:first-child {
+    color: white !important;
+    width: 0px !important;
+    max-width: 0px !important;
+    max-height: 0px !important;
+    font-size: 0px !important;
+}
+.hemail-error {
+    display: none ; 
+    color: #ed1b24; 
+    font-size: 25px;
+    text-align: center;
+}
+.modal-body.text-center.here_the_msg{
+
+}
+.here_the_msg {
+    padding: 14% 5%;
+}
+
+.here_the_msg>h2 { 
+    color: #e71b24;
+    padding-bottom: 40px;
+    font-weight: bolder;
+}
+
+.here_the_msg>p { 
+    padding: 1% 5%;
+}
+#idcontactForm  span{
+  color: red;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}

@@ -1,0 +1,43 @@
+ 
+	   <div class="xs">
+  	 <h3>Emails</h3>
+ 
+	<div class="bs-example4" data-example-id="simple-responsive-table">
+
+
+
+    <div class="table-responsive">
+  <table class="table sortablea">
+    <thead>
+      <tr> 
+        <th  ng-click="emaild.nameOrder = sortTable('name', emaild.nameOrder)" > name<i class="fa " ng-class="{ 'fa-sort-desc' : emaild.nameOrder , 'fa-sort-asc' : !emaild.nameOrder  }" ng-show="emailss.name" aria-hidden="true"></i>
+</th>
+        <th ng-click="emaild.emailOrder = sortTable('email', emaild.emailOrder)" > email<i class="fa " ng-class="{ 'fa-sort-desc' : emaild.emailOrder , 'fa-sort-asc' : !emaild.emailOrder  }" ng-show="emailss.email" aria-hidden="true"></i>
+</th>
+        <th ng-click="emaild.telephoneOrder = sortTable('telephone', emaild.telephoneOrder)" > telephone<i class="fa " ng-class="{ 'fa-sort-desc' : emaild.telephoneOrder , 'fa-sort-asc' : !emaild.telephoneOrder  }" ng-show="emailss.telephone" aria-hidden="true"></i>
+</th>
+        <th ng-click="emaild.messageOrder = sortTable('message', emaild.messageOrder)" > message<i class="fa " ng-class="{ 'fa-sort-desc' : emaild.messageOrder , 'fa-sort-asc' : !emaild.messageOrder  }" ng-show="emailss.message" aria-hidden="true"></i>
+</th>
+        <th ng-click="emaild.clientOrder = sortTable('client', emaild.clientOrder)" > client<i class="fa " ng-class="{ 'fa-sort-desc' : emaild.clientOrder , 'fa-sort-asc' : !emaild.clientOrder  }" ng-show="emailss.client" aria-hidden="true"></i>
+</th>
+        <th ng-click="emaild.dateOrder = sortTable('date', emaild.dateOrder)" > time<i class="fa " ng-class="{ 'fa-sort-desc' : emaild.dateOrder , 'fa-sort-asc' : !emaild.dateOrder  }" ng-show="emailss.date" aria-hidden="true"></i>
+</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+ 
+      <tr ng-repeat="email in emails"> 
+        <td>{{email.name}}</td>
+        <td>{{email.email}}</td>
+        <td>{{email.telephone}}</td>
+        <td>{{email.message}}</td>
+        <td>{{email.client}}</td>
+        <td>{{email.date}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+    </div><!-- /.table-responsive -->
+  </div>
+  </div>
+ 

@@ -1,0 +1,228 @@
+<style type="text/css">
+	.mainCustro{
+	    height: 100%;
+	  }
+
+.jus-a-height{
+	padding: 0px;
+}
+	  nav.sidebar, .main{
+	    -webkit-transition: margin 200ms ease-out;
+	      -moz-transition: margin 200ms ease-out;
+	      -o-transition: margin 200ms ease-out;
+	      transition: margin 200ms ease-out;
+	      background: #212121;
+	  }
+
+	  .main{
+	    padding: 10px 10px 0 10px;
+	  }
+
+	 @media (min-width: 765px) {
+
+	    .main{
+	      /*position: absolute;*/
+	      width: calc(100% - 40px); 
+	      /*margin-left: 40px;*/
+	      float: right;
+	    }
+
+	    nav.sidebar:hover + .main{
+	      /*margin-left: 200px;*/
+	      width: calc(100% - 200px); 
+	    }
+
+	     
+
+	    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+	      margin-left: 0px;
+	    }
+
+	    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+	      text-align: center;
+	      width: 100%;
+	      margin-left: 0px;
+	    }
+	    
+	    nav.sidebar a{
+	      padding-right: 13px;
+	    }
+
+	    nav.sidebar .navbar-nav > li:first-child{
+	      border-top: 1px #e5e5e5 solid;
+	    }
+
+	    nav.sidebar .navbar-nav > li{
+	      border-bottom: 1px #e5e5e5 solid;
+	    }
+
+	    nav.sidebar .navbar-nav .open .dropdown-menu {
+	      position: static;
+	      float: none;
+	      width: auto;
+	      margin-top: 0;
+	      background-color: transparent;
+	      border: 0;
+	      -webkit-box-shadow: none;
+	      box-shadow: none;
+	    }
+
+	    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+	      padding: 0 0px 0 0px;
+	    }
+
+	    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+	      color: #777;
+	    }
+
+	    nav.sidebar{
+	      width: 200px;
+	      height: 100%;
+	      margin-left: -160px;
+	      float: left;
+	      margin-bottom: 0px;
+	    }
+
+	    nav.sidebar li {
+	      width: 100%;
+	    }
+
+	    nav.sidebar:hover{
+	      margin-left: 0px;
+	    }
+
+	    .forAnimate{
+	      opacity: 0;
+	    }
+	  }
+	   
+	  @media (min-width: 1330px) {
+
+	    .main{
+	      width: calc(100% - 200px);
+	      /*margin-left: 200px;*/
+	    }
+
+	    nav.sidebar{
+	      margin-left: 0px;
+	      float: left;
+	    }
+
+	    nav.sidebar .forAnimate{
+	      opacity: 1;
+	    }
+	  }
+
+	  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+	    color: #CCC;
+	    background-color: transparent;
+	  }
+
+	  nav:hover .forAnimate{
+	    opacity: 1;
+	  }
+	  section{
+	    padding-left: 15px;
+	  }
+	  .mainExt {
+	  	background-color: white;
+	  	min-height: 549px;
+	  }
+	 .footer>div>.col-md-4{
+	 	background: #212121;
+	 	    padding: 4em 0 0;
+	 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-profile-n{
+	max-height: 200px;
+	height: 200px;
+	border-radius: 50%;	
+	min-width: 200px;
+}
+
+.no-shadow{
+    box-shadow: none;
+}
+.form-controller2 {
+	outline: none;
+	width: 100%;
+	padding: 10px 10px 20px;
+	font-size: 14px;
+	color: #212121;
+	border: none; 
+	font-weight: 600;
+	background: none;
+}
+.padding-top-1{
+	padding-top: 0.7em;
+}
+
+.new-hidden-edit {
+	background: white;
+	position: absolute;
+	width: 90%;
+	padding: 5px;
+	border: none;
+	-webkit-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
+	-moz-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
+	box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
+
+}
+
+.hsow-edit-h {
+	cursor: pointer;
+}
+.hsow-edit-h>i { 
+	color: #1A215C;
+}
+.hsow-edit-h>i:hover {
+	color: red;
+}
+.edit-mg {
+	position: absolute;
+	right: 0px;
+}
+</style>
+
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>      
+    </div>
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+      <ul class="nav navbar-nav custmenuHfu">
+        <li class=""><a href="customer-home">home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+        <li class=""><a href="customer-profile">profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+        <li class="dropdown">
+
+
+
+        <li class=""><a href="customer-history">history<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-dashboard"></span></a></li>
+
+ 
+        <li ><a href="customer-complaint">complaints<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>  
+
+      </ul>
+    </div>
+  </div> 

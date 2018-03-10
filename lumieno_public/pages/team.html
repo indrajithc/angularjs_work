@@ -1,0 +1,28 @@
+<!-- team -->
+
+	<div class="team">
+		<div class="container">
+			<h3 style="padding-top: 2em;">Meet Our Team</h3>
+			<div class="wthree_team_grids">
+
+
+
+
+				<div class="col-md-3 wthree_team_grid pading-b" ng-repeat="member in team" >
+					<img check-image ng-src="{{member.image}}" alt=" " class="img-responsive" style="height: 162px; width: 162px; width: auto; border-radius: 50%;" onerror="javascript:this.src='assets/images/default.png'" />
+					<h4>{{member.name}} <span>{{member.mobile}}</span></h4>
+					<div class="agileits_social_button">
+						<ul class="my_social-0">
+						 <li ng-repeat="socl in member.links" title="{{socl.name}}"><a ng-href="{{socl.url}}" class="socl" > <i class="fa fa-{{socl.icon}}" aria-hidden="true" ></i></a></li>  
+						</ul>
+					</div>
+				</div>
+
+
+ 
+				<div class="clearfix"> </div>
+				<p>{{basic.basicDescriptionteam}}</p>
+			</div>
+		</div>
+	</div>
+<!-- //team -->

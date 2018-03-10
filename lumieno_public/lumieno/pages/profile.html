@@ -1,0 +1,383 @@
+<div class="widget_4" style=" min-height: 615px; " ng-cloak>
+	<div class="col-md-4 widget_1_box1">
+		<div class="coffee">
+			<div class="coffee-top">
+				<a href="#"><img class="img-responsive" ng-src="{{displayImags}}" alt="" style="width: 100%; height: auto;">
+					<div class="doe">
+						<h6>{{display.name}}</h6>
+						<p>{{display.email}}</p>
+					</div>
+				</a>
+			</div>
+			<div class="follow pading-ev16">
+				<div class="col-xs-12 two">
+					<p>{{display.landline}}</p>
+					<span>+91 {{display.mobile}}</span>
+				</div>
+				<div class="clearfix"> </div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 stats-info3 jako0933"> 
+		<div class="online">
+			<a >
+				<div class="online-top">
+
+					<div class="top-on">
+						<div class="top-on1">
+							<span>name</span>
+							<p>{{display.name}}</p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+
+
+			<a >
+				<div class="online-top">
+					<div class="top-on">
+						<div class="top-on1">
+							<span>email</span>
+							<p>{{display.email}}</p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+
+			
+
+			<a >
+				<div class="online-top">
+					<div class="top-on">
+						<div class="top-on1">
+							<span>mobile number</span>
+							<p>{{display.mobile}}</p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+
+			
+
+			<a >
+				<div class="online-top">
+					<div class="top-on">
+						<div class="top-on1">
+							<span>landline number </span>
+							<p>{{display.landline}}</p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+
+			
+
+			<a >
+				<div class="online-top">
+					<div class="top-on">
+						<div class="top-on1">
+							<span>address</span>
+							<p>{{display.address}}</p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+
+			
+
+			<a >
+				<div class="online-top">
+					<div class="top-on">
+						<div class="top-on1">
+							<span>website address</span>
+							<p>{{display.website}}</p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+
+			
+
+			<a >
+				<div class="online-top">
+					<div class="top-on">
+						<div class="top-on1">
+							<span>description</span>
+							<p>{{display.description}}</p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
+				</div>
+			</a>
+
+			
+
+			
+
+			
+
+		</div>
+	</div>
+	<div class="col-md-4 stats-info stats-info1 scroll-y">
+		<div class="panel-heading">
+			<h4 class="panel-title">login Stats</h4>
+		</div>
+		<div class="panel-body panel-body2 scroll-y">
+			<div class="scroll-y">
+				<ul class="list-unstyled">
+					<li ng-repeat="log in loginLog"><span>{{log.client}} - -</span>{{log.browser}}<br><span class="time-show-m"><i class="fa fa-circle" aria-hidden="true"></i>{{log.time}}</span><div class=" pull-right" ng-class="{ 'text-success' : log.success, 'text-danger' : !log.success }">{{log.attempt}}-time/s<i class="fa " ng-class="{ 'fa-level-up' : log.success, 'fa-level-down' : !log.success }"></i></div></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"> </div>
+</div>
+
+
+
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+
+	<h3 class="text-capitalize">login</h3>
+
+	<div class="bs-example" data-example-id="form-validation-states">
+		<form name="adminLogin" ng-submit="adminLoginSubmit()" >
+
+			<div class="form-group has-feedback" 
+			ng-class="{ 'has-success' : adminProfile.username.$valid, 'has-error' : adminProfile.username.$invalid && !adminProfile.username.$pristine }">
+
+			<label class="control-label text-capitalize" for="inputWarning2">username</label>
+			<input type="text" class="form-control1" name="username" id="username" placeholder="Enter your username" ng-model="login.username"  ng-minlength="6" ng-maxlength="255" required >
+			<span class="glyphicon form-control-feedback"  aria-hidden="true"
+			ng-class="{ 'glyphicon-ok' : adminProfile.username.$valid, 'glyphicon-remove' : adminProfile.username.$invalid && !adminProfile.username.$pristine }" ></span>
+			<span span ng-show="adminProfile.username.$invalid && adminProfile.username.$error.required" class="help-block">Your username is required.</span>            
+			<span ng-show="adminProfile.username.$invalid && adminProfile.username.$error.minlength" class="help-block">username is too short.</span>
+			<span ng-show="adminProfile.username.$invalid && adminProfile.username.$error.maxlength" class="help-block">username is too long.</span>
+		</div>    
+
+
+
+		<div class="form-group has-feedback" 
+		ng-class="{ 'has-success' : adminLogin.password.$valid, 'has-error' : adminLogin.password.$invalid && !adminLogin.password.$pristine }">
+
+		<label class="control-label text-capitalize" for="inputWarning2">current password</label>
+		<input type="password" class="form-control1" name="password" id="password" placeholder="Enter your password" ng-model="login.password"  ng-minlength="6" ng-maxlength="255" required >
+		
+		<span span ng-show="adminLogin.password.$invalid && adminLogin.password.$error.required" class="help-block">Your password is required.</span>            
+		<span ng-show="adminLogin.password.$invalid && adminLogin.password.$error.minlength" class="help-block">password is too short.</span>
+		<span ng-show="adminLogin.password.$invalid && adminLogin.password.$error.maxlength" class="help-block">password is too long.</span>
+
+		<span ng-show="adminLogin.password.$invalid && errorPassword" class="help-block">{{ errorPassword }}</span>
+	</div>  
+
+	<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : adminLogin.newpassword.$valid, 'has-error' : adminLogin.newpassword.$invalid && !adminLogin.newpassword.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">new password</label>
+	<input type="password" class="form-control1" name="newpassword" id="newpassword" placeholder="Enter your password" ng-model="login.newpassword"  ng-minlength="6" ng-maxlength="255" required >
+	
+	<span span ng-show="adminLogin.newpassword.$invalid && adminLogin.newpassword.$error.required" class="help-block">Your new password is required.</span>            
+	<span ng-show="adminLogin.newpassword.$invalid && adminLogin.newpassword.$error.minlength" class="help-block">new password is too short.</span>
+	<span ng-show="adminLogin.newpassword.$invalid && adminLogin.newpassword.$error.maxlength" class="help-block">new password is too long.</span>
+</div>  
+
+<div class="form-group has-feedback" 
+ng-class="{ 'has-success' : adminLogin.repassword.$valid, 'has-error' : adminLogin.repassword.$invalid && !adminLogin.repassword.$pristine }">
+
+<label class="control-label text-capitalize" for="inputWarning2">re-enter password</label>
+<input type="password" class="form-control1" name="repassword" id="repassword" placeholder="Enter your repassword" ng-model="login.repassword"  ng-minlength="6" ng-maxlength="255" required >
+
+<span span ng-show="adminLogin.repassword.$invalid && adminLogin.repassword.$error.required" class="help-block">Your password is required.</span>            
+<span ng-show="adminLogin.repassword.$invalid && adminLogin.repassword.$error.minlength" class="help-block">password is too short.</span>
+<span ng-show="adminLogin.repassword.$invalid && adminLogin.repassword.$error.maxlength" class="help-block">password is too long.</span>
+<span ng-show="adminLogin.repassword.$invalid && misMPassword" class="help-block">{{ misMPassword }}</span>
+</div>  
+
+
+
+<div class="form-group has-feedback" >
+
+	<div class="col-sm-offset-10 col-sm-2" style="margin-bottom: 20px;">
+		<input type="submit" class="col-sm-12 btn-success btn" ng-disabled="adminLogin.$invalid || adminLogin.$pristine "  value="update">
+	</div>
+</div>    
+
+
+</form>
+</div>
+
+
+
+<h3 class="text-capitalize">profile</h3>
+<div class="tab-content">
+	<div class="tab-pane active" id="horizontal-form">
+
+		
+		<form name="adminProfile" ng-submit="adminProfileSubmit()" >
+
+			<div class="form-group has-feedback" 
+			ng-class="{ 'has-success' : adminProfile.name.$valid, 'has-error' : adminProfile.name.$invalid && !adminProfile.name.$pristine }">
+
+			<label class="control-label text-capitalize" for="inputWarning2">name</label>
+			<input type="text" class="form-control1" name="name" id="name" placeholder="Enter your name" ng-model="user.name"  ng-minlength="2" ng-maxlength="255" required >
+			<span class="glyphicon form-control-feedback"  aria-hidden="true"
+			ng-class="{ 'glyphicon-ok' : adminProfile.name.$valid, 'glyphicon-remove' : adminProfile.name.$invalid && !adminProfile.name.$pristine }" ></span>
+			<span span ng-show="adminProfile.name.$invalid && adminProfile.name.$error.required" class="help-block">Your name is required.</span>            
+			<span ng-show="adminProfile.name.$invalid && adminProfile.name.$error.minlength" class="help-block">name is too short.</span>
+			<span ng-show="adminProfile.name.$invalid && adminProfile.name.$error.maxlength" class="help-block">name is too long.</span>
+		</div>    
+
+
+		<div class="form-group has-feedback" 
+		ng-class="{ 'has-success' : adminProfile.email.$valid, 'has-error' : adminProfile.email.$invalid && !adminProfile.email.$pristine }">
+
+		<label class="control-label text-capitalize" for="inputWarning2">email</label>
+		<input type="email" class="form-control1" name="email" id="email" placeholder="Enter your email" ng-model="user.email" ng-maxlength="255" required >
+		<span class="glyphicon form-control-feedback"  aria-hidden="true"
+		ng-class="{ 'glyphicon-ok' : adminProfile.email.$valid, 'glyphicon-remove' : adminProfile.email.$invalid && !adminProfile.email.$pristine }" ></span>
+		<span span ng-show="adminProfile.email.$invalid && adminProfile.email.$error.required" class="help-block">Your email is required.</span>   
+		<span ng-show="adminProfile.email.$invalid && adminProfile.email.$error.maxlength" class="help-block">email is too long.</span>
+		<span ng-show="adminProfile.email.$invalid && adminProfile.email.$error.email" class="help-block">Invalid email address.</span>
+	</div>    
+
+
+	<div class="form-group has-feedback" 
+	ng-class="{ 'has-success' : adminProfile.mobile.$valid, 'has-error' : adminProfile.mobile.$invalid && !adminProfile.mobile.$pristine }">
+
+	<label class="control-label text-capitalize" for="inputWarning2">mobile number</label>
+	<input type="number" class="form-control1" name="mobile" id="mobile" placeholder="Enter your mobile number" ng-model="user.mobile" ng-minlength="10"  ng-maxlength="10" required >
+	<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	ng-class="{ 'glyphicon-ok' : adminProfile.mobile.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !adminProfile.mobile.$pristine }" ></span>
+	<span span ng-show="adminProfile.mobile.$invalid && adminProfile.mobile.$error.required" class="help-block">Your mobile number is required.</span>   
+	<span ng-show="adminProfile.mobile.$invalid && (adminProfile.mobile.$error.maxlength || adminProfile.mobile.$error.minlength || adminProfile.mobile.$error.number) " class="help-block">Invalid mobile number.</span> 
+</div>    
+
+
+
+
+<div class="form-group has-feedback" 
+ng-class="{ 'has-success' : adminProfile.landline.$valid, 'has-error' : adminProfile.landline.$invalid && !adminProfile.landline.$pristine }">
+
+<label class="control-label text-capitalize" for="inputWarning2">landline number</label>
+<input type="number" class="form-control1" name="landline" id="landline" placeholder="Enter your landline number" ng-model="user.landline" ng-minlength="6"  ng-maxlength="14" required >
+<span class="glyphicon form-control-feedback"  aria-hidden="true"
+ng-class="{ 'glyphicon-ok' : adminProfile.landline.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !adminProfile.landline.$pristine }" ></span>
+<span span ng-show="adminProfile.landline.$invalid && adminProfile.landline.$error.required" class="help-block">Your landline number is required.</span>   
+<span ng-show="adminProfile.landline.$invalid && (adminProfile.landline.$error.maxlength || adminProfile.landline.$error.minlength || adminProfile.landline.$error.number) " class="help-block">Invalid landline number.</span> 
+</div>    
+
+
+
+
+
+<div class="form-group has-feedback" 
+ng-class="{ 'has-success' : adminProfile.address.$valid, 'has-error' : adminProfile.address.$invalid && !adminProfile.address.$pristine }">
+
+<label class="control-label text-capitalize" for="inputWarning2">address</label>
+<textarea  class="form-control1" name="address" id="address" placeholder="Enter your address" ng-model="user.address" ng-minlength="10" required ></textarea>
+<span class="glyphicon form-control-feedback"  aria-hidden="true"
+ng-class="{ 'glyphicon-ok' : adminProfile.address.$valid, 'glyphicon-remove' : adminProfile.address.$invalid && !adminProfile.address.$pristine }" ></span>
+<span span ng-show="adminProfile.address.$invalid && adminProfile.address.$error.required" class="help-block">Your address is required.</span>   
+<span ng-show="adminProfile.address.$invalid && adminProfile.address.$error.minlength" class="help-block">address is too short.</span> 
+</div>    
+
+
+<div class="form-group has-feedback" 
+ng-class="{ 'has-success' : adminProfile.website.$valid, 'has-error' : adminProfile.website.$invalid && !adminProfile.website.$pristine }">
+
+<label class="control-label text-capitalize" for="inputWarning2">website address</label>
+<input type="url" class="form-control1" name="website" id="website" placeholder="Enter your website address" ng-model="user.website"  ng-minlength="2" ng-maxlength="2550"  >
+<span class="glyphicon form-control-feedback"  aria-hidden="true"
+ng-class="{ 'glyphicon-ok' : adminProfile.website.$valid, 'glyphicon-remove' : adminProfile.website.$invalid && !adminProfile.website.$pristine }" ></span> 
+<span ng-show="adminProfile.website.$invalid && adminProfile.website.$error.maxlength" class="help-block">website address is too long.</span>
+<span ng-show="adminProfile.address.$invalid && adminProfile.website.$error.url" class="help-block">Invalid website address .</span> 
+</div>    
+
+
+
+<div class="form-group has-feedback" 
+ng-class="{ 'has-success' : adminProfile.description.$valid, 'has-error' : adminProfile.description.$invalid && !adminProfile.description.$pristine }">
+
+<label class="control-label text-capitalize" for="inputWarning2">description</label>
+<textarea  class="form-control1" name="description" id="description" placeholder="Enter your description" ng-model="user.description" ng-minlength="6"  ></textarea>
+<span class="glyphicon form-control-feedback"  aria-hidden="true"
+ng-class="{ 'glyphicon-ok' : adminProfile.description.$valid, 'glyphicon-remove' : adminProfile.description.$invalid && !adminProfile.description.$pristine }" ></span> 
+<span ng-show="adminProfile.description.$invalid && adminProfile.description.$error.minlength" class="help-block">description is too short.</span> 
+</div> 
+
+
+
+<div class="form-group  has-feedback">
+	<label class="control-label text-capitalize" for="">image</label>
+	<div class=""> 
+		<div class="input-group">
+			<span class="input-group-btn" style="   ">
+				<a class="btn btn-info" id="select-file-1-1"> select image</a>
+			</span>
+			
+
+			<select class="form-control"   id="user_image"  " name="user_image" value=" " ratio= "1 / 1" ng-model="user.image"  ng-change="updateImage(user.image  )"  required>
+				<option ng-repeat="x in images" value="{{x.name}}">{{x.name}}</option>
+			</select>
+			<span span ng-show="adminProfile.image.$invalid && adminProfile.image.$error.required" class="help-block">Your address is required.</span>   
+
+		</div>
+		<div class="col-md-12 gallery-upladed" id="image-up">
+		</div>
+		<div class="photome">              
+			<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{imagesSrc}}" class="img-rounded  my_image_here_cust" alt="update image" id="" ng-show="imagesSrc"> 
+		</div>
+	</div>
+</div> 
+
+<div class="form-group has-feedback" >
+
+	<div class="col-sm-offset-5 col-sm-3">
+		<input type="submit" class="btn-primary btn" ng-disabled="adminProfile.$invalid || dminProfile.$pristine "  value="Submit">
+	</div>
+</div>    
+
+
+
+</form>
+</div>
+</div>
+
+<div class="panel-body">
+	<form role="form" class="form-horizontal">
+
+	</form>
+</div>
+<div class="bs-example" data-example-id="form-validation-states-with-icons">
+	<form>
+
+	</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

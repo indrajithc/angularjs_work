@@ -1,0 +1,151 @@
+
+<div class="xs">
+  <h3>carts</h3>
+
+  <div class="bs-example4"  >
+
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active"><a  show-tab  data-toggle="pill" ng-href="#home">All</a></li>
+      <li><a   show-tab data-toggle="pill" ng-href="#menu1">Menu 1</a></li>
+      <li><a  show-tab  data-toggle="pill" ng-href="#menu2">Menu 2</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+
+
+
+
+           
+          <div class="panel panel-default" ng-repeat="cart in carts" ng-show="cart.product.length">
+            <div class="panel-heading">
+            <div class="class-okd">
+              
+              <div class="col-md-3">
+                <label>ORDER PLACED</label>
+                <p>{{cart.date}}</p>
+              </div>
+
+              <div class="col-md-2">
+                <label>TOTAL</label>
+                <p> <i class="fa fa-inr" aria-hidden="true"></i>{{cart.amount}}</p>
+              </div>
+
+              <div class="col-md-3">
+                <label>SHIP TO</label>
+                <p>{{cart.customer.pin}}</p>
+              </div>
+
+              <div class="col-md-4 text-right">
+                <label>ORDER</label>
+                <p>#{{cart.key}}</p>
+              </div>
+            </div>
+
+
+
+
+            </div>
+            <div class="panel-body">
+
+              <div class="panel-body" ng-repeat="product in cart.product">
+                    <div class="apdng-bt-10">
+
+                      <h4 class="text-capitalize text-warning" ng-show="!product.expected  && !product.ltime"><i class="fa fa-shopping-cart recho  " aria-hidden="true"></i>waiting</h4>
+                      <p  ng-show="!product.expected  && !product.ltime" class="text-capitalize rechop  text-warning">preparing for dispatch </p>
+
+                      <h4 class="text-capitalize text-info" ng-show="product.expected && !product.ltime"><i class="fa fa-truck recho  " aria-hidden="true"></i>expected delivery date {{product.expected}}</h4>
+                      <p  ng-show="product.expected && !product.ltime" class="text-capitalize text-info rechop">your package is on its way</p>
+
+                      <h4 ng-show="product.ltime" class="text-capitalize text-success"><i class="fa fa-check recho  " aria-hidden="true"></i>Delivered {{product.ltime}}</h4>
+                      <p  ng-show="product.ltime" class="text-capitalize text-success rechop">Your package was delivered</p>
+                    </div>
+
+                    <div class="col-md-8"> 
+                      <img ng-src="{{product.image}}" alt=" " class="col-md-2 img-responsive" onerror="javascript:this.src='assets/images/default.png'" />
+                      <div class="col-md-10">
+                        <a ng-click="go( product.product.name )" href="#"><h5  class="apdng-bt-10" >{{ product.product.name }}</h5></a>
+                        <h6>no of pieces <span>{{ product.count }}</span></h6> 
+                        <h6>total <span class="color-red"><i class="fa fa-inr" aria-hidden="true"></i>{{ addPrice(product.charge, product.product.nprice, product.count) }}</span></h6>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="col-md-4">
+                      <div>
+                        <button ng-click="gotoDetails(product, cart)" class="col-sm-12 btn btn-info">delivery details</button>
+                      </div>
+                    </div>
+
+              </div>
+            
+
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+
+
+          
+
+
+
+
+          </div>
+        </div>
+
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <h3>Menu 1</h3>
+        <p>Some content in menu 1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div id="menu2" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p>Some content in menu 2.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <button class="col-sm-offset-11 col-sm-1 btn btn-info btn-xs" ng-click="moreT()">more</button>
+</div>

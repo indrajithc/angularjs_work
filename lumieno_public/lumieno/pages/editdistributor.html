@@ -1,0 +1,197 @@
+ 
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+ 
+
+	<h3 class="col-sm-11  text-capitalize">Edit member</h3> 
+ 	<button class="col-sm-1 btn btn-xs btn-info" ng-click="backToPro()">back</button>
+	<div class="tab-content">
+		<div class="tab-pane active" id="horizontal-form">
+
+ 
+ 
+
+
+
+
+
+
+
+		<form name="distributorProfile" ng-submit="distributorUpdateSubmit()" >
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.name.$valid, 'has-error' : distributorProfile.name.$invalid && !distributorProfile.name.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">name</label>
+					<input type="text" class="form-control1" name="name" id="name" placeholder="Enter your name" ng-model="distributor.name"  ng-minlength="2" ng-maxlength="255" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.name.$valid, 'glyphicon-remove' : distributorProfile.name.$invalid && !distributorProfile.name.$pristine }" ></span>
+					<span span ng-show="distributorProfile.name.$invalid && distributorProfile.name.$error.required" class="help-block">Your name is required.</span>            
+					<span ng-show="distributorProfile.name.$invalid && distributorProfile.name.$error.minlength" class="help-block">name is too short.</span>
+            		<span ng-show="distributorProfile.name.$invalid && distributorProfile.name.$error.maxlength" class="help-block">name is too long.</span>
+				</div>    
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.email.$valid, 'has-error' : distributorProfile.email.$invalid && !distributorProfile.email.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">email</label>
+					<label  class="form-control1" name="email" id="email" >{{distributor.email}}</label> 
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.email.$valid, 'glyphicon-remove' : distributorProfile.email.$invalid && !distributorProfile.email.$pristine }" ></span>
+					<span span ng-show="distributorProfile.email.$invalid && distributorProfile.email.$error.required" class="help-block">Your email is required.</span>   
+            		<span ng-show="distributorProfile.email.$invalid && distributorProfile.email.$error.maxlength" class="help-block">email is too long.</span>
+  					<span ng-show="distributorProfile.email.$invalid && distributorProfile.email.$error.email" class="help-block">Invalid email address.</span>
+				</div>    
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.dob.$valid, 'has-error' : distributorProfile.dob.$invalid && !distributorProfile.dob.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">dob</label>
+
+					<div class="form-control1 input-group date" data-provide="datepicker" id="ndob" data-date-format="dd-mm-yyyy">
+					  <input type="text" class="form-control datepicker" name="dob" id="dob"   ng-model="distributor.dob"             placeholder="date of birth"     data-date-format="dd-mm-yyyy">
+					
+					  <div class="input-group-addon">
+					    <i  class="fa fa-calendar" aria-hidden="true"></i>
+
+					  </div>
+					</div>
+
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.dob.$valid, 'glyphicon-remove' : distributorProfile.dob.$invalid && !distributorProfile.dob.$pristine }" ></span>
+					<span span ng-show="distributorProfile.dob.$invalid && distributorProfile.dob.$error.required" class="help-block">Your dob is required.</span>            
+					<span ng-show="distributorProfile.dob.$invalid && distributorProfile.dob.$error.minlength" class="help-block">dob is too short.</span>
+            		<span ng-show="distributorProfile.dob.$invalid && distributorProfile.dob.$error.maxlength" class="help-block">dob is too long.</span>
+				</div>    
+
+
+                      
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.mobile.$valid, 'has-error' : distributorProfile.mobile.$invalid && !distributorProfile.mobile.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">mobile number</label>
+					<input type="number" class="form-control1" name="mobile" id="mobile" placeholder="Enter your mobile number" ng-model="distributor.mobile" ng-minlength="10"  ng-maxlength="10" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.mobile.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !distributorProfile.mobile.$pristine }" ></span>
+					<span span ng-show="distributorProfile.mobile.$invalid && distributorProfile.mobile.$error.required" class="help-block">Your mobile number is required.</span>   
+            		<span ng-show="distributorProfile.mobile.$invalid && (distributorProfile.mobile.$error.maxlength || distributorProfile.mobile.$error.minlength || distributorProfile.mobile.$error.number) " class="help-block">Invalid mobile number.</span> 
+				</div>    
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.landline.$valid, 'has-error' : distributorProfile.landline.$invalid && !distributorProfile.landline.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">landline number</label>
+					<input type="number" class="form-control1" name="landline" id="landline" placeholder="Enter your landline number" ng-model="distributor.landline" ng-minlength="6"  ng-maxlength="14"  >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.landline.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !distributorProfile.landline.$pristine }" ></span>
+					<span span ng-show="distributorProfile.landline.$invalid && distributorProfile.landline.$error.required" class="help-block">Your landline number is required.</span>   
+            		<span ng-show="distributorProfile.landline.$invalid && (distributorProfile.landline.$error.maxlength || distributorProfile.landline.$error.minlength || distributorProfile.landline.$error.number) " class="help-block">Invalid landline number.</span> 
+				</div>    
+
+
+		 
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.address.$valid, 'has-error' : distributorProfile.address.$invalid && !distributorProfile.address.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">address</label>
+					<textarea  class="form-control1" name="address" id="address" placeholder="Enter your address" ng-model="distributor.address" ng-minlength="10" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.address.$valid, 'glyphicon-remove' : distributorProfile.address.$invalid && !distributorProfile.address.$pristine }" ></span>
+					<span span ng-show="distributorProfile.address.$invalid && distributorProfile.address.$error.required" class="help-block">Your address is required.</span>   
+            		<span ng-show="distributorProfile.address.$invalid && distributorProfile.address.$error.minlength" class="help-block">address is too short.</span> 
+				</div>    
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.pin.$valid, 'has-error' : distributorProfile.pin.$invalid && !distributorProfile.pin.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">pin</label>
+					<input type="number" class="form-control1" name="pin" id="pin" placeholder="Enter your pin number" ng-model="distributor.pin" ng-minlength="6"  ng-maxlength="10" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.pin.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !distributorProfile.pin.$pristine }" ></span>
+					<span span ng-show="distributorProfile.pin.$invalid && distributorProfile.pin.$error.required" class="help-block">Your pin is required.</span>   
+            		<span ng-show="distributorProfile.mobile.$invalid && (distributorProfile.mobile.$error.maxlength || distributorProfile.mobile.$error.minlength || distributorProfile.mobile.$error.number) " class="help-block">Invalid pin.</span> 
+				</div>    
+
+
+ 
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.description.$valid, 'has-error' : distributorProfile.description.$invalid && !distributorProfile.description.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description</label>
+					<textarea  class="form-control1" name="description" id="description" placeholder="Enter your description" ng-model="distributor.description" ng-minlength="6"  ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.description.$valid, 'glyphicon-remove' : distributorProfile.description.$invalid && !distributorProfile.description.$pristine }" ></span> 
+            		<span ng-show="distributorProfile.description.$invalid && distributorProfile.description.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+ 		<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : distributorProfile.deletedd.$valid, 'has-error' : distributorProfile.deletedd.$invalid && !distributorProfile.deletedd.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">deleted</label>
+					<input type="checkbox" class="form-control" name="deletedd" id="deletedd" placeholder="Enter your deletedd" ng-model="distributor.deletedd"  >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : distributorProfile.deletedd.$valid, 'glyphicon-remove' : distributorProfile.deletedd.$invalid && !distributorProfile.deletedd.$pristine }" ></span> 
+				</div>    
+
+
+
+				<div class="form-group  has-feedback">
+					<label class="control-label text-capitalize" for="">image</label>
+					 <div class=""> 
+						<div class="input-group">
+							<span class="input-group-btn" style="   ">
+								<a class="btn btn-info" id="select-file-1-8"> select image</a>
+							</span>
+							 
+
+							<select class="form-control"   id="user_image"  " name="user_image" value=" " ratio= "1 / 1" ng-model="distributor.image"  ng-change="updateImage(distributor.image  )"  >
+								<option ng-repeat="x in distributor.images" value="{{x.name}}">{{x.name}}</option>
+							</select>
+							<span span ng-show="distributorProfile.image.$invalid && distributorProfile.image.$error.required" class="help-block">Your image is required.</span>   
+
+						</div>
+						<div class="col-md-12 gallery-upladed" id="image-up">
+						</div>
+						<div class="photome">              
+							<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{imagesSrc}}" class="img-rounded  my_image_here_cust" alt="update image" id=""  > 
+						</div>
+					 </div>
+				</div> 
+ 
+				<div class="form-group has-feedback" >
+
+					<div class="col-sm-offset-5 col-sm-3">
+						<input type="submit" class="btn-primary btn" ng-disabled="distributorProfile.$invalid || distributorProfile.$pristine "  value="Submit">
+					</div>
+				</div>     
+
+			</form>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<form role="form" class="form-horizontal">
+
+		</form>
+	</div>
+	<div class="bs-example" data-example-id="form-validation-states-with-icons">
+		<form>
+
+		</form>
+
+	</div>
+</div>
+
+
+
+
+
+

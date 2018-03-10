@@ -1,0 +1,40 @@
+RewriteEngine on
+ 
+
+
+
+#view renamed 
+RewriteRule ^dashboard$ index.php [L]  
+RewriteRule ^about$ index.php/about [L]  
+RewriteRule ^profile$ index.php/profile [L]  
+
+RewriteRule ^basic$ index.php/basic [L]  
+RewriteRule ^email$ index.php/email [L]  
+RewriteRule ^category$ index.php/category [L]  
+RewriteRule ^product$ index.php/product [L]  
+RewriteRule ^details$ index.php/details [L]  
+RewriteRule ^team$ index.php/team [L]  
+RewriteRule ^editteam$ index.php/editteam [L]  
+RewriteRule ^links$ index.php/links [L]  
+RewriteRule ^look$ index.php/look [L]  
+RewriteRule ^view$ index.php/view [L]  
+RewriteRule ^distributor$ index.php/distributor [L]  
+RewriteRule ^editdistributor$ index.php/editdistributor [L]  
+RewriteRule ^instructions$ index.php/instructions [L]  
+RewriteRule ^customer$ index.php/customer [L]  
+RewriteRule ^viewcustomer$ index.php/viewcustomer [L]  
+RewriteRule ^cart$ index.php/cart [L]  
+RewriteRule ^carthistory$ index.php/carthistory [L]  
+
+
+
+RewriteRule ^login$ login.php [L]  
+
+ 
+
+#RewriteRule ^path.php$ index.php [L]  
+RewriteRule ^js/$ index.php [L]  
+RewriteRule ^pages/$ index.php [L]  
+
+
+ 

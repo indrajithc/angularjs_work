@@ -1,0 +1,58 @@
+ 
+ 
+ 
+<div class="widget_4" style=" margin-bottom: 10px ; " ng-cloak>
+	   
+	   	 <h3>customer</h3>
+	  
+	 	<div class="bs-example4" data-example-id="simple-responsive-table">
+
+
+
+	     <div class="table-responsive">
+	   <table class="table sortablea">
+	     <thead>
+	       <tr> 
+	         <th> name</th>
+	         <th> dob</th>
+	         <th> email</th>
+	         <th> mobile</th>
+	         <th> address</th>  
+	         <th> pin</th>     
+	         <th> image</th> 
+	         <th> time </th>
+	         <th> action </th>
+	       </tr>
+	     </thead>
+	     <tbody class="table-hover">
+	  
+	       <tr ng-repeat="customer in customers"> 
+	         <td>{{customer.name}}</td>
+	         <td>{{customer.dob}}</td> 
+	         <td>{{customer.email}}</td> 
+	         <td>{{customer.mobile}}</td> 
+	         <td>{{customer.address}}</td> 
+	         <td>{{customer.pin}}</td> 
+	         <td><img class="im-responsive" style="max-width: 90px;" ng-src="{{customer.imageName}}" onerror="javascript:this.src='../assets/images/default.png'" ></td> 
+	         <td>{{customer.date}}</td>
+	         <td><button class="btn btn-xs {{ customer.delete ==1 ? 'btn-danger' : 'btn-primary' }}" ng-class="" ng-click="editcustomer( customer )">view</button> 
+	        <!--  <br/>
+	        <button class="btn btn-xs btn-success warning_4" ng-class="" ng-click="editLinks( customer )">link</button>  -->
+	         </td> 
+	       </tr>
+	       
+	     </tbody>
+	   </table>
+	     </div> 
+	   </div>
+	    
+	  
+</div>
+
+
+ 
+
+
+
+
+

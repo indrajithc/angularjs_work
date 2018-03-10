@@ -1,0 +1,409 @@
+ 
+
+
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+ 
+
+	<h3 class="text-capitalize">add new item one</h3>
+	<div class="tab-content">
+		<div class="tab-pane active" id="horizontal-form">
+
+ 
+			<form name="lookProfile" ng-submit="lookSubmit()" >
+
+
+					<div class="form-group has-feedback" 
+					ng-class="{ 'has-success' : lookProfile.name1.$valid, 'has-error' : lookProfile.name1.$invalid && !lookProfile.name1.$pristine }">
+
+						<label class="control-label text-capitalize" for="inputWarning2">name1</label>
+ 
+						<select class="form-control1" name="name1" id="name1" placeholder="Enter your name1" ng-model="look.name1"      required>
+							<option ng-repeat="x in look.products" value="{{x.name}}">{{x.name}}</option>	
+						</select>
+						<span class="glyphicon form-control-feedback"  aria-hidden="true"
+						ng-class="{ 'glyphicon-ok' : lookProfile.name1.$valid, 'glyphicon-remove' : lookProfile.name1.$invalid && !lookProfile.name1.$pristine }" ></span>
+						<span span ng-show="lookProfile.name1.$invalid && lookProfile.name1.$error.required" class="help-block">Your name1 is required.</span>
+											<span ng-show="lookProfile.name1.$invalid && lookProfile.name1.$error.minlength" class="help-block">name1 is too short.</span>
+	            		<span ng-show="lookProfile.name1.$invalid && lookProfile.name1.$error.maxlength" class="help-block">name1 is too long.</span> 
+					</div> 
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description1.$valid, 'has-error' : lookProfile.description1.$invalid && !lookProfile.description1.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description1</label>
+					<textarea  class="form-control1" name="description1" id="description1" placeholder="Enter your description1" ng-model="look.description1" ng-minlength="6"  required></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description1.$valid, 'glyphicon-remove' : lookProfile.description1.$invalid && !lookProfile.description1.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description1.$invalid && lookProfile.description1.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description2.$valid, 'has-error' : lookProfile.description2.$invalid && !lookProfile.description2.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description2</label>
+					<textarea  class="form-control1" name="description2" id="description2" placeholder="Enter your description2" ng-model="look.description2" ng-minlength="6"  required></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description2.$valid, 'glyphicon-remove' : lookProfile.description2.$invalid && !lookProfile.description2.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description2.$invalid && lookProfile.description2.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description3.$valid, 'has-error' : lookProfile.description3.$invalid && !lookProfile.description3.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description3</label>
+					<textarea  class="form-control1" name="description3" id="description3" placeholder="Enter your description3" ng-model="look.description3" ng-minlength="6"  required></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description3.$valid, 'glyphicon-remove' : lookProfile.description3.$invalid && !lookProfile.description3.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description3.$invalid && lookProfile.description3.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description4.$valid, 'has-error' : lookProfile.description4.$invalid && !lookProfile.description4.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description4</label>
+					<textarea  class="form-control1" name="description4" id="description4" placeholder="Enter your description4" ng-model="look.description4" ng-minlength="6" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description4.$valid, 'glyphicon-remove' : lookProfile.description4.$invalid && !lookProfile.description4.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description4.$invalid && lookProfile.description4.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+
+				<div class="form-group  has-feedback" id="selected-img-1">
+					<label class="control-label text-capitalize" for="">image</label>
+					 <div class=""> 
+						<div class="input-group">
+							<span class="input-group-btn" style="   ">
+								<a class="btn btn-info sledted-img-heresrsr" id="select-file-1-7" image-for="selected-img-1"> select image</a>
+							</span>
+							 
+							<input type="text"  class="form-control"  ng-model="look.image1"    id="user_image1"   name="user_image1" name=""  >
+						
+
+							<span span ng-show="lookProfile.image.$invalid && lookProfile.image.$error.required" class="help-block">Your image is required.</span>   
+
+						</div>
+						<div class="col-md-12 gallery-upladed" id="image-up">
+						</div>
+						<div class="photome">              
+							<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{imageSrc1}}" class="img-rounded  my_image_here_cust" alt="update image" id=""  src="../images/look/{{look.image1}}"> 
+						</div>
+					 </div>
+				</div> 
+
+
+
+ 
+				<div class="form-group has-feedback" style="padding: 2em;" >
+
+					
+
+				</div>   
+
+
+	<h3 class="text-capitalize">add new item two</h3>
+ 
+
+
+					<div class="form-group has-feedback" 
+					ng-class="{ 'has-success' : lookProfile.name2.$valid, 'has-error' : lookProfile.name2.$invalid && !lookProfile.name2.$pristine }">
+
+						<label class="control-label text-capitalize" for="inputWarning2">name2</label>
+	 
+						<select class="form-control1" name="name2" id="name2" placeholder="Enter your name2" ng-model="look.name2"      required>
+								<option ng-repeat="x in look.products" value="{{x.name}}">{{x.name}}</option>	
+						</select>
+						<span class="glyphicon form-control-feedback"  aria-hidden="true"
+						ng-class="{ 'glyphicon-ok' : lookProfile.name2.$valid, 'glyphicon-remove' : lookProfile.name2.$invalid && !lookProfile.name2.$pristine }" ></span>
+						<span span ng-show="lookProfile.name2.$invalid && lookProfile.name2.$error.required" class="help-block">Your name2 is required.</span>
+											<span ng-show="lookProfile.name2.$invalid && lookProfile.name2.$error.minlength" class="help-block">name2 is too short.</span>
+	            		<span ng-show="lookProfile.name2.$invalid && lookProfile.name2.$error.maxlength" class="help-block">name2 is too long.</span> 
+					</div>    
+
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : lookProfile.description5.$valid, 'has-error' : lookProfile.description5.$invalid && !lookProfile.description5.$pristine }">
+
+										<label class="control-label text-capitalize" for="inputWarning2">description5</label>
+										<textarea  class="form-control1" name="description5" id="description5" placeholder="Enter your description5" ng-model="look.description5" ng-minlength="6" required ></textarea>
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : lookProfile.description5.$valid, 'glyphicon-remove' : lookProfile.description5.$invalid && !lookProfile.description5.$pristine }" ></span> 
+					            		<span ng-show="lookProfile.description5.$invalid && lookProfile.description5.$error.minlength" class="help-block">description is too short.</span> 
+									</div> 
+
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : lookProfile.description6.$valid, 'has-error' : lookProfile.description6.$invalid && !lookProfile.description6.$pristine }">
+
+										<label class="control-label text-capitalize" for="inputWarning2">description6</label>
+										<textarea  class="form-control1" name="description6" id="description6" placeholder="Enter your description6" ng-model="look.description6" ng-minlength="6" required ></textarea>
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : lookProfile.description6.$valid, 'glyphicon-remove' : lookProfile.description6.$invalid && !lookProfile.description6.$pristine }" ></span> 
+					            		<span ng-show="lookProfile.description6.$invalid && lookProfile.description6.$error.minlength" class="help-block">description is too short.</span> 
+									</div> 
+
+
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : lookProfile.description7.$valid, 'has-error' : lookProfile.description7.$invalid && !lookProfile.description7.$pristine }">
+
+										<label class="control-label text-capitalize" for="inputWarning2">description7</label>
+										<textarea  class="form-control1" name="description7" id="description7" placeholder="Enter your description7" ng-model="look.description7" ng-minlength="6" required ></textarea>
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : lookProfile.description7.$valid, 'glyphicon-remove' : lookProfile.description7.$invalid && !lookProfile.description7.$pristine }" ></span> 
+					            		<span ng-show="lookProfile.description7.$invalid && lookProfile.description7.$error.minlength" class="help-block">description is too short.</span> 
+									</div> 
+
+
+
+
+									<div class="form-group has-feedback" 
+									ng-class="{ 'has-success' : lookProfile.description8.$valid, 'has-error' : lookProfile.description8.$invalid && !lookProfile.description8.$pristine }">
+
+										<label class="control-label text-capitalize" for="inputWarning2">description8</label>
+										<textarea  class="form-control1" name="description8" id="description8" placeholder="Enter your description8" ng-model="look.description8" ng-minlength="6" required ></textarea>
+										<span class="glyphicon form-control-feedback"  aria-hidden="true"
+										ng-class="{ 'glyphicon-ok' : lookProfile.description8.$valid, 'glyphicon-remove' : lookProfile.description8.$invalid && !lookProfile.description8.$pristine }" ></span> 
+					            		<span ng-show="lookProfile.description8.$invalid && lookProfile.description8.$error.minlength" class="help-block">description is too short.</span> 
+									</div> 
+
+
+
+
+
+
+
+									<div class="form-group  has-feedback" id="selected-img-2">
+										<label class="control-label text-capitalize" for="">image</label>
+										 <div class=""> 
+											<div class="input-group">
+												<span class="input-group-btn" style="   ">
+													<a class="btn btn-info sledted-img-heresrsr" id="select-file-1-7" image-for="selected-img-1"> select image</a>
+												</span>
+												 
+												<input type="text"  class="form-control"  ng-model="look.image2"    id="user_image2"   name="user_image" name=""  >
+											
+
+												<span span ng-show="lookProfile.image.$invalid && lookProfile.image.$error.required" class="help-block">Your image is required.</span>   
+
+											</div>
+											<div class="col-md-12 gallery-upladed" id="image-up">
+											</div>
+											<div class="photome">              
+												<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{imageSrc1}}" class="img-rounded  my_image_here_cust" alt="update image" id="" src="../images/look/{{look.image2}}" > 
+											</div>
+										 </div>
+									</div> 
+
+
+									
+									<div class="form-group has-feedback" style="padding: 2em;" >
+
+										
+
+									</div>   
+
+
+	<h3 class="text-capitalize">add new item three</h3>
+ 
+
+					<div class="form-group has-feedback" 
+					ng-class="{ 'has-success' : lookProfile.name3.$valid, 'has-error' : lookProfile.name3.$invalid && !lookProfile.name3.$pristine }">
+
+						<label class="control-label text-capitalize" for="inputWarning2">name3</label>
+	 
+						<select class="form-control1" name="name3" id="name3" placeholder="Enter your name3" ng-model="look.name3"     required>
+								<option ng-repeat="x in look.products" value="{{x.name}}">{{x.name}}</option>	
+						</select>
+						<span class="glyphicon form-control-feedback"  aria-hidden="true"
+						ng-class="{ 'glyphicon-ok' : lookProfile.name3.$valid, 'glyphicon-remove' : lookProfile.name3.$invalid && !lookProfile.name3.$pristine }" ></span>
+						<span span ng-show="lookProfile.name3.$invalid && lookProfile.name3.$error.required" class="help-block">Your name3 is required.</span>
+											<span ng-show="lookProfile.name3.$invalid && lookProfile.name3.$error.minlength" class="help-block">name3 is too short.</span>
+	            		<span ng-show="lookProfile.name3.$invalid && lookProfile.name3.$error.maxlength" class="help-block">name3 is too long.</span> 
+					</div> 
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description9.$valid, 'has-error' : lookProfile.description9.$invalid && !lookProfile.description9.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description9</label>
+					<textarea  class="form-control1" name="description9" id="description9" placeholder="Enter your description9" ng-model="look.description9" ng-minlength="6" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description9.$valid, 'glyphicon-remove' : lookProfile.description9.$invalid && !lookProfile.description9.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description9.$invalid && lookProfile.description9.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description10.$valid, 'has-error' : lookProfile.description10.$invalid && !lookProfile.description10.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description10</label>
+					<textarea  class="form-control1" name="description10" id="description10" placeholder="Enter your description10" ng-model="look.description10" ng-minlength="6" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description10.$valid, 'glyphicon-remove' : lookProfile.description10.$invalid && !lookProfile.description10.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description10.$invalid && lookProfile.description10.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description11.$valid, 'has-error' : lookProfile.description11.$invalid && !lookProfile.description11.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description11</label>
+					<textarea  class="form-control1" name="description11" id="description11" placeholder="Enter your description11" ng-model="look.description11" ng-minlength="6" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description11.$valid, 'glyphicon-remove' : lookProfile.description11.$invalid && !lookProfile.description11.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description11.$invalid && lookProfile.description11.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description12.$valid, 'has-error' : lookProfile.description12.$invalid && !lookProfile.description12.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description12</label>
+					<textarea  class="form-control1" name="description12" id="description12" placeholder="Enter your description12" ng-model="look.description12" ng-minlength="6" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description12.$valid, 'glyphicon-remove' : lookProfile.description12.$invalid && !lookProfile.description12.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description12.$invalid && lookProfile.description12.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description13.$valid, 'has-error' : lookProfile.description13.$invalid && !lookProfile.description13.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description13</label>
+					<textarea  class="form-control1" name="description13" id="description13" placeholder="Enter your description13" ng-model="look.description13" ng-minlength="6" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description13.$valid, 'glyphicon-remove' : lookProfile.description13.$invalid && !lookProfile.description13.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description13.$invalid && lookProfile.description13.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : lookProfile.description14.$valid, 'has-error' : lookProfile.description14.$invalid && !lookProfile.description14.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description14</label>
+					<textarea  class="form-control1" name="description14" id="description14" placeholder="Enter your description14" ng-model="look.description14" ng-minlength="6" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : lookProfile.description14.$valid, 'glyphicon-remove' : lookProfile.description14.$invalid && !lookProfile.description14.$pristine }" ></span> 
+            		<span ng-show="lookProfile.description14.$invalid && lookProfile.description14.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+								 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									<div class="form-group  has-feedback" id="selected-img-3">
+										<label class="control-label text-capitalize" for="">image</label>
+										 <div class=""> 
+											<div class="input-group">
+												<span class="input-group-btn" style="   ">
+													<a class="btn btn-info sledted-img-heresrsr" id="select-file-1-7" image-for="selected-img-1"> select image</a>
+												</span>
+												 
+												<input type="text"  class="form-control"  ng-model="look.image3"    id="user_image3"   name="user_image" name=""  >
+											
+
+												<span span ng-show="lookProfile.image.$invalid && lookProfile.image.$error.required" class="help-block">Your image is required.</span>   
+
+											</div>
+											<div class="col-md-12 gallery-upladed" id="image-up">
+											</div>
+											<div class="photome">              
+												<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{imageSrc1}}" class="img-rounded  my_image_here_cust" alt="update image" id=""  src="../images/look/{{look.image3}}"> 
+											</div>
+										 </div>
+									</div> 
+
+
+									
+									<div class="form-group has-feedback" style="padding: 2em;" >
+
+										
+
+									</div>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									
+									<div class="form-group has-feedback" >
+
+										<div class="col-md-offset-5 col-md-3">
+											<input type="submit" class="btn-primary btn" ng-disabled="lookProfile.$invalid || lookProfile.$pristine "  value="Submit">
+										</div>
+									</div>    
+									
+
+		 
+			</form>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<form role="form" class="form-horizontal">
+
+		</form>
+	</div>
+	<div class="bs-example" data-example-id="form-validation-states-with-icons">
+		<form>
+
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+ 

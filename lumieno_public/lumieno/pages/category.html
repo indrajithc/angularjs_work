@@ -1,0 +1,214 @@
+ 
+<div class="widget_4" style=" margin-bottom: 10px ; " ng-cloak>
+	   
+	   	 <h3>Category</h3>
+	  
+	 	<div class="bs-example4" data-example-id="simple-responsive-table">
+
+
+
+	     <div class="table-responsive">
+	   <table class="table sortablea">
+	     <thead>
+	       <tr> 
+	         <th> name</th>
+	         <th> description </th>	     
+	         <th> image</th>
+	         <th> client </th>
+	         <th> time </th>
+	         <th> action </th>
+	       </tr>
+	     </thead>
+	     <tbody class="table-hover">
+	  
+	       <tr ng-repeat="category in categorys"> 
+	         <td>{{category.name}}</td>
+	         <td>{{category.description}}</td> 
+	         <td><img class="im-responsive" ng-src="{{category.imageName}}" onerror="javascript:this.src='../assets/images/default.png'" ></td>
+	         <td>{{category.client}}</td>
+	         <td>{{category.date}}</td>
+	         <td><button class="btn btn-sm {{ category.delete ==1 ? 'btn-danger' : 'btn-primary' }}" ng-class="" ng-click="editCategory( category )">edit</button> 
+	         <div class=" effect2 edit" ng-show="category.show">
+	         	<div class="removeMe">
+	         		<i class="fa fa-times-circle-o" aria-hidden="true" ng-click="dismissThis( category )"></i>
+	         	</div>
+	          
+	         			<form name="categoryEditProfile" ng-submit="categoryUpdateSubmit(category)" >
+
+	         				<div class="form-group has-feedback" 
+	         				ng-class="{ 'has-success' : categoryEditProfile.name.$valid, 'has-error' : categoryEditProfile.name.$invalid && !categoryEditProfile.name.$pristine }">
+
+	         					<label class="control-label text-capitalize" for="inputWarning2">name</label>
+	         					<label type="text" class="form-control1"    ng-model="category.name"  >{{category.name}}</label>
+	         					
+
+	         				</div>    
+
+
+
+	         				<div class="form-group has-feedback" 
+	         				ng-class="{ 'has-success' : categoryEditProfile.description.$valid, 'has-error' : categoryEditProfile.description.$invalid && !categoryEditProfile.description.$pristine }">
+
+	         					<label class="control-label text-capitalize" for="inputWarning2">description</label>
+	         					<textarea  class="form-control1" name="edescription" id="edescription" placeholder="Enter your description" ng-model="category.description" ng-minlength="6"  ></textarea>
+	         					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+	         					ng-class="{ 'glyphicon-ok' : categoryEditProfile.description.$valid, 'glyphicon-remove' : categoryEditProfile.description.$invalid && !categoryEditProfile.description.$pristine }" ></span> 
+	                     		<span ng-show="categoryEditProfile.description.$invalid && categoryEditProfile.description.$error.minlength" class="help-block">description is too short.</span> 
+	         				</div> 
+
+
+
+	         				<div class="form-group  has-feedback">
+	         					<label class="control-label text-capitalize" for="">image</label>
+	         					 <div class=""> 
+	         						<div class="input-group">
+	         							 
+	         							 
+
+	         							<select class="form-control"   id="euser_image"  " name="euser_image" value=" " ratio= "1 / 1" ng-model="category.image"  ng-change="updateEditImage(category,category.image  )"  >
+	         								<option value="{{category.image}}" selected="selected">{{category.image}}</option>
+	         								<option ng-repeat="x in images" value="{{x.name}}">{{x.name}}</option>
+	         							</select>
+	         							<span span ng-show="categoryEditProfile.image.$invalid && categoryEditProfile.image.$error.required" class="help-block">Your address is required.</span>   
+
+	         						</div>
+	         						<div class="col-md-12 gallery-upladed" id="image-up">
+	         						</div>
+	         						<div class="photome">              
+	         							<img style="padding: 10px ;  " ng-src="{{category.imageName}}" class="img-rounded  my_image_here_cust image-doto" alt="update image" id=""  > 
+	         						</div>
+	         					 </div>
+	         				</div> 
+
+
+	         			 <div class="form-group has-feedback" 
+	         			 ng-class="{ 'has-success' : categoryProfile.delete.$valid, 'has-error' : categoryProfile.delete.$invalid && !categoryProfile.delete.$pristine }">
+
+	         			 	<label class="control-label text-capitalize" for="inputWarning2">delete</label>
+	         			 	 <select class="form-control"   id="deletea"  " name="deletea"   ng-model="category.delete">
+	         			 	 	<option value="1" selected="{{ category.delete==1 ? true: false}}">true</option>
+	         			 	 	<option value="0" selected="{{ category.delete==0 ? true: false }}">false</option> 
+	         			 	 </select>
+ 
+	         			 </div> 
+
+	          
+	         				<div class="form-group has-feedback" >
+
+	         					<div class="col-sm-offset-5 col-sm-3">
+	         						<input type="submit" class="btn-primary btn" ng-disabled="categoryEditProfile.$invalid || categoryEditProfile.$pristine "  value="Submit">
+	         					</div>
+	         				</div>    
+	         		 
+	         			</form>
+
+
+
+
+	         </div>
+	         </td> 
+	       </tr>
+	       
+	     </tbody>
+	   </table>
+	     </div><!-- /.table-responsive -->
+	   </div>
+	    
+	  
+</div>
+
+
+
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+ 
+
+	<h3 class="text-capitalize">add new category</h3>
+	<div class="tab-content">
+		<div class="tab-pane active" id="horizontal-form">
+
+ 
+			<form name="categoryProfile" ng-submit="categorySubmit()" >
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : categoryProfile.name.$valid, 'has-error' : categoryProfile.name.$invalid && !categoryProfile.name.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">name</label>
+					<input type="text" class="form-control1" name="name" id="name" placeholder="Enter your name" ng-model="category.name"  ng-minlength="2" ng-maxlength="255" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : categoryProfile.name.$valid, 'glyphicon-remove' : categoryProfile.name.$invalid && !categoryProfile.name.$pristine }" ></span>
+					<span span ng-show="categoryProfile.name.$invalid && categoryProfile.name.$error.required" class="help-block">Your name is required.</span>            
+					<span ng-show="categoryProfile.name.$invalid && categoryProfile.name.$error.minlength" class="help-block">name is too short.</span>
+            		<span ng-show="categoryProfile.name.$invalid && categoryProfile.name.$error.maxlength" class="help-block">name is too long.</span>
+            		<span ng-show="categoryProfile.name.$invalid && category.nameError" class="help-block">{{category.nameError}}</span>
+				</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : categoryProfile.description.$valid, 'has-error' : categoryProfile.description.$invalid && !categoryProfile.description.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description</label>
+					<textarea  class="form-control1" name="description" id="description" placeholder="Enter your description" ng-model="category.description" ng-minlength="6"  ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : categoryProfile.description.$valid, 'glyphicon-remove' : categoryProfile.description.$invalid && !categoryProfile.description.$pristine }" ></span> 
+            		<span ng-show="categoryProfile.description.$invalid && categoryProfile.description.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+				<div class="form-group  has-feedback">
+					<label class="control-label text-capitalize" for="">image</label>
+					 <div class=""> 
+						<div class="input-group">
+							<span class="input-group-btn" style="   ">
+								<a class="btn btn-info" id="select-file-1-3"> select image</a>
+							</span>
+							 
+
+							<select class="form-control"   id="user_image"  " name="user_image" value=" " ratio= "1 / 1" ng-model="category.image"  ng-change="updateImage(category.image  )"  >
+								<option value=""></option>
+								<option ng-repeat="x in images" value="{{x.name}}">{{x.name}}</option>
+							</select>
+							<span span ng-show="categoryProfile.image.$invalid && categoryProfile.image.$error.required" class="help-block">Your address is required.</span>   
+
+						</div>
+						<div class="col-md-12 gallery-upladed" id="image-up">
+						</div>
+						<div class="photome">              
+							<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{imageSrc1}}" class="img-rounded  my_image_here_cust" alt="update image" id=""  > 
+						</div>
+					 </div>
+				</div> 
+
+
+
+ 
+				<div class="form-group has-feedback" >
+
+					<div class="col-sm-offset-5 col-sm-3">
+						<input type="submit" class="btn-primary btn" ng-disabled="categoryProfile.$invalid || categoryProfile.$pristine "  value="Submit">
+					</div>
+				</div>    
+		 
+			</form>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<form role="form" class="form-horizontal">
+
+		</form>
+	</div>
+	<div class="bs-example" data-example-id="form-validation-states-with-icons">
+		<form>
+
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+ 

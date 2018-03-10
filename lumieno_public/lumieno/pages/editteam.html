@@ -1,0 +1,182 @@
+
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+ 
+
+	<h3 class="col-sm-11  text-capitalize">Edit member</h3> 
+ 	<button class="col-sm-1 btn btn-xs btn-info" ng-click="backToPro()">back</button>
+	<div class="tab-content">
+		<div class="tab-pane active" id="horizontal-form">
+
+ 
+			<form name="teamProfile" ng-submit="teamUpdateSubmit()" >
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.name.$valid, 'has-error' : teamProfile.name.$invalid && !teamProfile.name.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">name</label>
+					<input type="text" class="form-control1" name="name" id="name" placeholder="Enter your name" ng-model="user.name"  ng-minlength="2" ng-maxlength="255" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.name.$valid, 'glyphicon-remove' : teamProfile.name.$invalid && !teamProfile.name.$pristine }" ></span>
+					<span span ng-show="teamProfile.name.$invalid && teamProfile.name.$error.required" class="help-block">Your name is required.</span>            
+					<span ng-show="teamProfile.name.$invalid && teamProfile.name.$error.minlength" class="help-block">name is too short.</span>
+            		<span ng-show="teamProfile.name.$invalid && teamProfile.name.$error.maxlength" class="help-block">name is too long.</span>
+				</div>    
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.position.$valid, 'has-error' : teamProfile.position.$invalid && !teamProfile.position.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">position</label>
+					<input type="text" class="form-control1" name="position" id="position" placeholder="Enter your position" ng-model="user.position"  ng-minlength="2" ng-maxlength="255"  >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.position.$valid, 'glyphicon-remove' : teamProfile.position.$invalid && !teamProfile.position.$pristine }" ></span>
+					<span span ng-show="teamProfile.position.$invalid && teamProfile.position.$error.required" class="help-block">Your position is required.</span>            
+					<span ng-show="teamProfile.position.$invalid && teamProfile.position.$error.minlength" class="help-block">position is too short.</span>
+            		<span ng-show="teamProfile.position.$invalid && teamProfile.position.$error.maxlength" class="help-block">position is too long.</span>
+				</div>    
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.email.$valid, 'has-error' : teamProfile.email.$invalid && !teamProfile.email.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">email</label>
+
+					<label class="form-control1" for="inputWarning2">{{user.email}}</label> 
+					 
+				</div>    
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.mobile.$valid, 'has-error' : teamProfile.mobile.$invalid && !teamProfile.mobile.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">mobile number</label>
+					<input type="number" class="form-control1" name="mobile" id="mobile" placeholder="Enter your mobile number" ng-model="user.mobile" ng-minlength="10"  ng-maxlength="10" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.mobile.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !teamProfile.mobile.$pristine }" ></span>
+					<span span ng-show="teamProfile.mobile.$invalid && teamProfile.mobile.$error.required" class="help-block">Your mobile number is required.</span>   
+            		<span ng-show="teamProfile.mobile.$invalid && (teamProfile.mobile.$error.maxlength || teamProfile.mobile.$error.minlength || teamProfile.mobile.$error.number) " class="help-block">Invalid mobile number.</span> 
+				</div>    
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.landline.$valid, 'has-error' : teamProfile.landline.$invalid && !teamProfile.landline.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">landline number</label>
+					<input type="number" class="form-control1" name="landline" id="landline" placeholder="Enter your landline number" ng-model="user.landline" ng-minlength="6"  ng-maxlength="14"  >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.landline.$valid, 'glyphicon-remove' : adminPromobileemail.$invalid && !teamProfile.landline.$pristine }" ></span>
+					<span span ng-show="teamProfile.landline.$invalid && teamProfile.landline.$error.required" class="help-block">Your landline number is required.</span>   
+            		<span ng-show="teamProfile.landline.$invalid && (teamProfile.landline.$error.maxlength || teamProfile.landline.$error.minlength || teamProfile.landline.$error.number) " class="help-block">Invalid landline number.</span> 
+				</div>    
+
+
+		 
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.address.$valid, 'has-error' : teamProfile.address.$invalid && !teamProfile.address.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">address</label>
+					<textarea  class="form-control1" name="address" id="address" placeholder="Enter your address" ng-model="user.address" ng-minlength="10" required ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.address.$valid, 'glyphicon-remove' : teamProfile.address.$invalid && !teamProfile.address.$pristine }" ></span>
+					<span span ng-show="teamProfile.address.$invalid && teamProfile.address.$error.required" class="help-block">Your address is required.</span>   
+            		<span ng-show="teamProfile.address.$invalid && teamProfile.address.$error.minlength" class="help-block">address is too short.</span> 
+				</div>    
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.website.$valid, 'has-error' : teamProfile.website.$invalid && !teamProfile.website.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">website address</label>
+					<input type="url" class="form-control1" name="website" id="website" placeholder="Enter your website address" ng-model="user.website"  ng-minlength="2" ng-maxlength="2550"  >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.website.$valid, 'glyphicon-remove' : teamProfile.website.$invalid && !teamProfile.website.$pristine }" ></span> 
+            		<span ng-show="teamProfile.website.$invalid && teamProfile.website.$error.maxlength" class="help-block">website address is too long.</span>
+  					<span ng-show="teamProfile.address.$invalid && teamProfile.website.$error.url" class="help-block">Invalid website address .</span> 
+				</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.description.$valid, 'has-error' : teamProfile.description.$invalid && !teamProfile.description.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">description</label>
+					<textarea  class="form-control1" name="description" id="description" placeholder="Enter your description" ng-model="user.description" ng-minlength="6"  ></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.description.$valid, 'glyphicon-remove' : teamProfile.description.$invalid && !teamProfile.description.$pristine }" ></span> 
+            		<span ng-show="teamProfile.description.$invalid && teamProfile.description.$error.minlength" class="help-block">description is too short.</span> 
+				</div> 
+
+
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : teamProfile.deletedd.$valid, 'has-error' : teamProfile.deletedd.$invalid && !teamProfile.deletedd.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">deleted</label>
+					<input type="checkbox" class="form-control" name="deletedd" id="deletedd" placeholder="Enter your deletedd" ng-model="user.deletedd"  >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : teamProfile.deletedd.$valid, 'glyphicon-remove' : teamProfile.deletedd.$invalid && !teamProfile.deletedd.$pristine }" ></span> 
+				</div>    
+
+
+
+
+
+
+				<div class="form-group  has-feedback">
+					<label class="control-label text-capitalize" for="">image</label>
+					 <div class=""> 
+						<div class="input-group">
+							<span class="input-group-btn" style="   ">
+								<a class="btn btn-info" id="select-file-1-6"> select image</a>
+							</span>
+							 
+
+							<select class="form-control"   id="user_image"  " name="user_image" value=" " ratio= "1 / 1" ng-model="user.image"  ng-change="updateImage(user.image  )"  >
+								<option ng-repeat="x in user.images" value="{{x.name}}">{{x.name}}</option>
+							</select>
+							<span span ng-show="teamProfile.image.$invalid && teamProfile.image.$error.required" class="help-block">Your image is required.</span>   
+
+						</div>
+						<div class="col-md-12 gallery-upladed" id="image-up">
+						</div>
+						<div class="photome">              
+							<img style="padding: 10px ; height: 196px; width: auto;" ng-src="{{imagesSrc}}" class="img-rounded  my_image_here_cust" alt="update image" id=""  > 
+						</div>
+					 </div>
+				</div> 
+ 
+				<div class="form-group has-feedback" >
+
+					<div class="col-sm-offset-5 col-sm-3">
+						<input type="submit" class="btn-primary btn" ng-disabled="teamProfile.$invalid || teamProfile.$pristine "  value="Submit">
+					</div>
+				</div>     
+
+			</form>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<form role="form" class="form-horizontal">
+
+		</form>
+	</div>
+	<div class="bs-example" data-example-id="form-validation-states-with-icons">
+		<form>
+
+		</form>
+
+	</div>
+</div>
+
+
+
+
+
+
+ 

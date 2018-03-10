@@ -1,0 +1,131 @@
+ 
+<div class="widget_4" style=" margin-bottom: 10px ; " ng-cloak>
+<div class="row">
+	<h3 class="col-sm-11  text-capitalize">add new link for <span class="color-red">{{memberName}}</span></h3>
+
+	 	<button class="col-sm-1 btn btn-xs btn-info" ng-hide="{{member!= null ? true: false}}" ng-click="backToPro()">team</button>
+		  
+</div>
+	 	<div class="bs-example4" data-example-id="simple-responsive-table">
+
+
+
+	     <div class="table-responsive">
+	   <table class="table sortablea">
+	     <thead>
+	       <tr> 
+	         <th> name</th>
+	         <th> url </th>	     
+	         <th> icon</th> 
+	         <th> time </th>
+	         <th> action </th>
+	       </tr>
+	     </thead>
+	     <tbody class="table-hover">
+	  
+	       <tr ng-repeat="link in links"> 
+	         <td>{{link.name}}</td>
+	         <td><a ng-href="{{link.url}}">{{link.name}}</a></td>  
+	         <td><i class="fa fa-{{link.icon}}" aria-hidden="true"></i></td>
+	         <td>{{link.date}}</td>
+	         <td><button class="btn btn-sm btn-danger" ng-class="" ng-click="removelink( link )"><i class="fa fa-times-circle-o" aria-hidden="true"></i></button> 
+	      
+	         </td> 
+	       </tr>
+	       
+	     </tbody>
+	   </table>
+	     </div> 
+	   </div>
+	    
+	  
+</div>
+
+
+
+<div class="grid_3 grid_4" style=" min-height: " ng-cloak>
+ 
+
+	<h3 class="col-sm-12  text-capitalize">add a new link </h3>
+ 
+	<div class="tab-content">
+		<div class="tab-pane active" id="horizontal-form">
+
+ 
+			<form name="linkProfile" ng-submit="linkSubmit()" >
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : linkProfile.name.$valid, 'has-error' : linkProfile.name.$invalid && !linkProfile.name.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2" style="width: 100%;">name</label>
+					<input type="text" class="form-control1" name="name" id="name" placeholder="Enter your link name" ng-model="link.name"  ng-minlength="2" ng-maxlength="255" required >
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : linkProfile.name.$valid, 'glyphicon-remove' : linkProfile.name.$invalid && !linkProfile.name.$pristine }" ></span>
+					<span span ng-show="linkProfile.name.$invalid && linkProfile.name.$error.required" class="help-block">Your name is required.</span>            
+					<span ng-show="linkProfile.name.$invalid && linkProfile.name.$error.minlength" class="help-block">name is too short.</span>
+            		<span ng-show="linkProfile.name.$invalid && linkProfile.name.$error.maxlength" class="help-block">name is too long.</span>
+            		<span ng-show="linkProfile.name.$invalid && link.nameError" class="help-block">{{link.nameError}}</span>
+				</div>    
+
+
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : linkProfile.url.$valid, 'has-error' : linkProfile.url.$invalid && !linkProfile.url.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">url</label>
+					<textarea  class="form-control1" name="url" id="url" placeholder="Enter your url" ng-model="link.url" ng-minlength="6"  required></textarea>
+					<span class="glyphicon form-control-feedback"  aria-hidden="true"
+					ng-class="{ 'glyphicon-ok' : linkProfile.url.$valid, 'glyphicon-remove' : linkProfile.url.$invalid && !linkProfile.url.$pristine }" ></span> 
+					<span span ng-show="linkProfile.url.$invalid && linkProfile.url.$error.required" class="help-block">link url  required.</span> 
+            		<span ng-show="linkProfile.url.$invalid && linkProfile.url.$error.minlength" class="help-block">url  too short.</span> 
+				</div> 
+
+				<div class="form-group has-feedback" 
+				ng-class="{ 'has-success' : linkProfile.icon.$valid, 'has-error' : linkProfile.icon.$invalid && !linkProfile.icon.$pristine }">
+
+					<label class="control-label text-capitalize" for="inputWarning2">icon</label>
+
+					<div class="input-group  ">
+				          <input type="text"   class="form-control1"  id="title"  placeholder="Enter link icon" name="title"  ng-model="link.icon" required>
+				          <div class="input-group-btn">
+				            <button class="btn btn-default" type="button">
+				              <i id="show_icona" style="font-size: 26px;" class="fa fa-{{link.icon}}"></i>
+				            </button>
+				          </div>
+				        </div>
+					 
+            		<span ng-show="linkProfile.description.$invalid && linkProfile.description.$error.minlength" class="help-block">icon is too short.</span> 
+				</div> 
+
+
+
+ 
+				<div class="form-group has-feedback" >
+
+					<div class="col-sm-offset-5 col-sm-3">
+						<input type="submit" class="btn-primary btn" ng-disabled="linkProfile.$invalid || linkProfile.$pristine "  value="Submit">
+					</div>
+				</div>    
+		 
+			</form>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		<form role="form" class="form-horizontal">
+
+		</form>
+	</div>
+	<div class="bs-example" data-example-id="form-validation-states-with-icons">
+		<form>
+
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+ 

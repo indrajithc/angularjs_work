@@ -1,0 +1,60 @@
+ 
+	   <div class="xs">
+  	 <h3>carts</h3>
+ 
+	<div class="bs-example4" data-example-id="simple-responsive-table">
+
+
+
+    <div class="table-responsive">
+  <table class="table sortablea">
+    <thead>
+      <tr>  
+
+<th  ng-click="cartd.noOrder = sortTable('no', cartd.noOrder)" >#<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.noOrder , 'fa-sort-asc' : !cartd.noOrder  }" ng-show="cartss.no" aria-hidden="true"></i>
+</th>
+<th  ng-click="cartd.productOrder = sortTable('product', cartd.productOrder)" > product<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.productOrder , 'fa-sort-asc' : !cartd.productOrder  }" ng-show="cartss.product" aria-hidden="true"></i>
+</th>
+<th  ng-click="cartd.customerOrder = sortTable('cname', cartd.customerOrder)" > customer<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.customerOrder , 'fa-sort-asc' : !cartd.customerOrder  }" ng-show="cartss.customer" aria-hidden="true"></i>
+</th>
+<th ng-click="cartd.emailOrder = sortTable('cemail', cartd.emailOrder)" > email<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.emailOrder , 'fa-sort-asc' : !cartd.emailOrder  }" ng-show="cartss.email" aria-hidden="true"></i>
+</th>
+<th ng-click="cartd.loginOrder = sortTable('clogin', cartd.loginOrder)" > login<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.loginOrder , 'fa-sort-asc' : !cartd.loginOrder  }" ng-show="cartss.login" aria-hidden="true"></i>
+</th>
+<th ng-click="cartd.countOrder = sortTable('count', cartd.countOrder)" > count<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.countOrder , 'fa-sort-asc' : !cartd.countOrder  }" ng-show="cartss.count" aria-hidden="true"></i>
+</th>
+<th ng-click="cartd.deliveredOrder = sortTable('success', cartd.deliveredOrder)" > delivered<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.deliveredOrder , 'fa-sort-asc' : !cartd.deliveredOrder  }" ng-show="cartss.delivered" aria-hidden="true"></i>
+</th>
+<th ng-click="cartd.buyOrder = sortTable('buy', cartd.dateOrder)" > buy<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.buyOrder , 'fa-sort-asc' : !cartd.buyOrder  }" ng-show="cartss.buy" aria-hidden="true"></i>
+</th> 
+       <th  ng-click="cartd.clientOrder = sortTable('client', cartd.nameOrder)" > client<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.clientOrder , 'fa-sort-asc' : !cartd.clientOrder  }" ng-show="cartss.client" aria-hidden="true"></i>
+       <th  ng-click="cartd.dateOrder = sortTable('date', cartd.dateOrder)" > date<i class="fa " ng-class="{ 'fa-sort-desc' : cartd.dateOrder , 'fa-sort-asc' : !cartd.dateOrder  }" ng-show="cartss.date" aria-hidden="true"></i>
+       <th> </th>
+</th>
+ 
+
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+ 
+      <tr ng-repeat="cart in carts"  ng-class="{ 'danger' : cart.delete  ,'status_success' : !cart.delete   }"> 
+        <td  ng-class="{ 'status ddanger' : cart.delete  ,'status dsuccess' : !cart.delete   }" >{{$index + 1}}</td>
+        <td  ng-class="{ 'status ddanger' : cart.pdelete  ,'status dsuccess' : !cart.pdelete   }" > <a ng-click="clickToPro( cart.product )">{{cart.product}}</a></td>
+        <td ng-class="{ 'status ddanger' : cart.cdelete ,'status dsuccess' : !cart.pdelete   }" ><a ng-click="editcustomer( cart.cemail )">{{cart.cname}}</a></td>
+        <td><a ng-click="editcustomer( cart.cemail )">{{cart.cemail}}</a></td>
+        <td  ng-class="{ 'status dsuccess' : cart.clogin , 'status dwarning' : !cart.clogin  }" >{{cart.clogin}}</td>
+        <td>{{cart.count}}</td>
+        <td  ng-class="{ 'status dsuccess' : cart.success , 'status dwarning' : !cart.success  }" >{{cart.success}}</td>
+        <td  ng-class="{ 'status dsuccess' : cart.buy , 'status dwarning' : !cart.buy  }" >{{cart.buy}}</td>
+        <td>{{cart.client}}</td> 
+        <td>{{cart.date}}</td> 
+        <td>   <button class="label label-warning" ng-click="detailed(cart)">more</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+    </div><!-- /.table-responsive -->
+  </div>
+  <button class="col-sm-offset-11 col-sm-1 btn btn-info btn-xs" ng-click="moreT()">more</button>
+  </div>
+ 

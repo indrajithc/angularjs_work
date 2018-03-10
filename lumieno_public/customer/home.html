@@ -1,0 +1,40 @@
+
+
+<div class="mainCustro" >
+
+<nav class="navbar navbar-default sidebar" role="navigation">
+<div ng-include="'customer/header.html'"></div>
+</nav>
+<div class="main mainExt">
+	
+<h3 class="apdng-bt-10 ">welcome</h3>
+
+
+<div class=" ">
+	
+	<div class="panel panel-default" >
+	<div class="panel-heading">
+		<h4 class="text-capitalize">terms and conditions</h4>
+	</div>
+	  <div class="panel-body">
+					 <ul class="panel-body  apdng-bt-10">
+					 	<li ng-repeat="instruction in instructions" ng-show="instruction.type == 0">{{instruction.instruction}}</li>
+					 </ul>
+
+ 
+					  <ul class="panel-body  apdng-bt-10">
+					 	<li ng-repeat="instruction in instructions" ng-show="instruction.type == 1">{{instruction.instruction}}</li>
+					 </ul>
+
+	  </div>
+	</div>
+
+
+
+
+</div>
+ 
+
+
+</div>
+</div>
